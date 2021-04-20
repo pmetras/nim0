@@ -1,0 +1,18 @@
+## My first Nim0 program: print integer squares in range 0 ... 10.
+
+var
+  i: int
+  r: int
+
+proc sqr(x: int; sqrX: var int) =
+  # Square the value of `x` and return it in `sqrX`.
+  sqrX = x * x
+
+for i in 0 .. 10:
+  sqr(i, r)
+  write(i)
+  write('*')
+  write(i)
+  write('=')
+  write(r)
+  writeLine()

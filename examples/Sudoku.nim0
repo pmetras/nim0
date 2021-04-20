@@ -1,0 +1,260 @@
+## A recursive brute force Sudoku solver.
+## ======================================
+## We consider here only classical 9x9 numeric Sudoku.
+## The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids
+## that compose the grid (also called "boxes") contain all of the digits from 1 to 9. The puzzle setter provides
+## a partially completed grid, which for a well-posed puzzle has a single solution. 
+
+const
+  SIZE = 9 ## The size of the grid
+  EMPTY = 0 ## The content of an empty cell in the grid
+  BOX = 3 ## The size of a *box* = sqr(SIZE) (3x3 square in 9x9 sudoku)
+
+type
+  Value = int ## The values that we place on the board.
+  Board = array[SIZE, array[SIZE, Value]] ## The grid defining the Sudoku
+
+var
+  board: Board ## The Sudoku grid
+  solved: bool ## true when a solution is found
+
+
+# For Nim I/O compatibility, define these templates
+#template write(c) = write(stdout, c)
+#template writeLine = writeLine(stdout, "")
+
+
+proc writeBoard =
+  ## Print a grid.
+  var r, c: int
+
+  for r in 0 .. SIZE - 1:
+    for c in 0 .. SIZE - 1:
+      if board[r][c] == EMPTY:
+        write('.')
+      else:
+        write(board[r][c])
+      write(' ')
+    writeLine()
+  writeLine()
+
+
+proc isInRow(row: int; number: Value; result: var bool) =
+  ## Check if a number is already present in a row. Return `true` if the number is already
+  ## placed in the row and so can't be placed in that row.
+  ## - `row`: the row index
+  ## - `number`: the number we want to put in the row.
+  var i: int
+  result = false
+  for i in 0 .. SIZE - 1:
+    if board[row][i] == number:
+      result = true
+
+
+proc isInCol(col: int; number: Value; result: var bool) =
+  ## Check if a number is already present in a column. Return `true` if the number is already
+  ## placed in the column and so can't be placed in that column.
+  ## - `col`: the column index
+  ## - `number`: the number we want to put in the row.
+  var i: int
+  result = false
+  for i in 0 .. SIZE - 1:
+    if board[i][col] == number:
+      result = true
+
+
+proc isInBox(row: int; col: int; number: Value; result: var bool) =
+  ## Check if a number is already present in a box. Return `true` if the number is already
+  ## placed in the box and so can't be placed in that box. The box is found from the coordinates
+  ## of the cell. It is the one that includes the given cell.
+  ## - `row`: the row index of the cell
+  ## - `col`: the column index of the cell
+  ## - `number`: the number we want to put in the box.
+  # We find the coordinates of the top left cell in the box.
+  var i, j, r, c: int
+  r = row - row mod BOX
+  c = col - col mod BOX
+  # We check all the cells in the box
+  result = false
+  for i in r .. r + BOX - 1:
+    for j in c .. c + BOX - 1:
+      if board[i][j] == number:
+        result = true
+
+
+proc isOk(row: int; col: int; number: Value; result: var bool) =
+  ## A number can be placed in a cell if it does not already appear in a row, a column or a box.
+  ## - `row`: the row index of the cell
+  ## - `col`: the column index of the cell
+  ## - `number`: the number we want to put in the cell.
+  var r1, r2, r3: bool
+  isInRow(row, number, r1)
+  isInCol(col, number, r2)
+  isInBox(row, col, number, r3)
+  result = not r1 and not r2 and not r3
+
+
+proc filled(result: var bool) =
+  ## Check if the grid is completed.
+  var row, col: int
+  result = true
+  for row in 0 .. SIZE - 1:
+    for col in 0 .. SIZE - 1:
+      if board[row][col] == EMPTY:
+        result = false
+
+
+proc solve(solved: var bool) =
+  ## The recursive proc to explore the tree of choices and find the first solution.
+  ## We consider all board cells one by one and we try to put all possible values that fullfil
+  ## the constraints: the value must not be already present in the row, column or box.
+  ## As long as we can (there are empty cells), we continue placing values.
+  ## When there is no empty cells, we've found a solution!
+  ## If we can't place any value in a cell, that's because a previous choice was wrong and we need
+  ## to backtrack. So we go back after emptying the last cell and try the next possible value,
+  ## eventually repeating that process.
+  ## The lack of `return` instruction in Nim0 makes quick recursive unstack more difficult to write
+  ## when the first solution is found.
+  var
+    ok: bool
+    row, col, number: int
+
+  # Consider all cells in the grid
+  row = 0
+  while row < SIZE:
+    col = 0
+    while col < SIZE:
+      # If the cell is empty
+      if board[row][col] == EMPTY:
+        # Look at all possible values
+        number = 1
+        while (number <= SIZE) and (not solved):
+          # If that number can be placed in that cell
+          ok = false
+          isOk(row, col, number, ok)
+          if ok:
+            # Place it and consider the next choice
+            board[row][col] = number
+            solve(solved)
+            if not solved:
+              # Else remove the last number from the board and try another one
+              board[row][col] = EMPTY
+          number = number + 1
+        # Return `false` if the number can't be placed: the `solve` proc backtracks.
+        if not solved:
+          row = SIZE + 1
+          col = SIZE + 1
+      if col < SIZE:
+        col = col + 1
+    if row < SIZE:
+      row = row + 1
+  if (row == SIZE) and (col == SIZE):
+    solved = true
+
+
+proc initBoard =
+  ## *Expert* level Sudoku for children: you can use it to debug
+  ## +-----+-----+
+  ## | . 1 | . . |
+  ## | . . | . 1 |
+  ## +-----+-----+
+  ## | . 3 | . . |
+  ## | . . | . 4 |
+  ## +-----+-----+
+  # var r, c: int
+  # 
+  # for r in 0 .. SIZE - 1:
+  #   for c in 0 .. SIZE - 1:
+  #     board[r][c] = EMPTY
+  # board[0][1] = 1
+  # board[1][3] = 1
+  # board[2][1] = 3
+  # board[3][3] = 4
+
+  ## A real *Expert* level 9x9 Sudoku
+  ## +-------+-------+-------+
+  ## | 8 . . | . . . | . . . |
+  ## | . . 3 | 6 . . | . . . |
+  ## | . 7 . | . 9 . | 2 . . |
+  ## +-------+-------+-------+
+  ## | . 5 . | . . 7 | . . . |
+  ## | . . . | . 4 5 | 7 . . |
+  ## | . . . | 1 . . | . 3 . |
+  ## +-------+-------+-------+
+  ## | . . 1 | . . . | . 6 8 |
+  ## | . . 8 | 5 . . | . 1 . |
+  ## | . 9 . | . . . | 4 . . |
+  ## +-------+-------+-------+
+  var r, c: int
+  
+  for r in 0 .. SIZE - 1:
+    for c in 0 .. SIZE - 1:
+      board[r][c] = EMPTY
+
+  #Expert 9x9
+  board[0][0] = 8
+  board[1][2] = 3
+  board[1][3] = 6
+  board[2][1] = 7
+  board[2][4] = 9
+  board[2][6] = 2
+  board[3][1] = 5
+  board[3][5] = 7
+  board[4][4] = 4
+  board[4][5] = 5
+  board[4][6] = 7
+  board[5][3] = 1
+  board[5][7] = 3
+  board[6][2] = 1
+  board[6][7] = 6
+  board[6][8] = 8
+  board[7][2] = 8
+  board[7][3] = 5
+  board[7][7] = 1
+  board[8][1] = 9
+  board[8][6] = 4
+
+
+proc writeGrid =
+  ## Write "Grid"
+  write('G')
+  write('r')
+  write('i')
+  write('d')
+  writeLine()
+
+
+proc writeSolution =
+  ## Write "Solution"
+  write('S')
+  write('o')
+  write('l')
+  write('u')
+  write('t')
+  write('i')
+  write('o')
+  write('n')
+  writeLine()
+
+
+proc writeNoSolution =
+  ## Write "No solution"
+  write('N')
+  write('o')
+  write(' ')
+  writeSolution()
+
+
+# Look for the first solution
+
+initBoard()
+writeGrid()
+writeBoard()
+writeLine()
+solved = false
+solve(solved)
+if solved:
+  writeSolution()
+  writeBoard()
+else:
+  writeNoSolution()

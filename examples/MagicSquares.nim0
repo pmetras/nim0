@@ -1,0 +1,43 @@
+## Print a magic square for odd values of size of the square.
+## https://en.wikipedia.org/wiki/Magic_square
+##
+## Compile with `$ ./nim0 comp examples/MagicSquares`
+## Try it with `$ ./nim0 run examples/MagicSquares MagicSquare 3`
+## or `$ ./nim0 run examples/MagicSquares MagicSquare 11`
+
+proc MagicSquare* =
+  var
+    i, j, x, nx, nsq, n: int
+    M: array[13, array[13, int]]
+  
+  # Remember, Nim0 does not have functions!
+  readInt(n)
+
+  nsq = n * n
+  x = 0
+  i = n div 2
+  j = n
+  while x < nsq:
+    nx = n + x
+    j = (j - 1) mod n
+    if j < 0:
+      j = j + n
+    x = x + 1
+    M[i][j] = x
+    while x < nx:
+      i = (i + 1) mod n
+      j = (j + 1) mod n
+      x = x + 1
+      M[i][j] = x
+
+  # Write result
+  i = 0
+  while i < n:
+    j = 0
+    while j < n:
+      write(M[i][j])
+      write(' ')
+      j = j + 1
+    i = i + 1
+    writeLine
+

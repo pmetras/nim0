@@ -1,0 +1,24 @@
+## Recursive calculation of factorial
+## https://en.wikipedia.org/wiki/Factorial
+## Compile it with: $ ./nim0 comp examples/Factorial
+## Run it with: $ ./nim0 run examples/Factorial
+
+proc factorial(n: int; r: var int) =
+  var x: int
+  if n == 1:
+    r = 1
+  else:
+    factorial(n - 1, x)
+    r = n * x
+
+var i, fact: int
+i = 1
+while i < 20:
+  factorial(i, fact)
+  write(i)
+  write('!')
+  write('=')
+  write(fact)
+  writeLine
+  i = i + 1
+

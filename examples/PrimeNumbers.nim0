@@ -1,0 +1,82 @@
+## Print `n` prime numbers greater than 3 and less than 399.
+##
+## Compile with `$ ./nim0 comp examples/PrimeNumbers`
+## Try it with `$ ./nim0 run examples/PrimeNumbers`
+
+proc PrimeNumbers* =
+  var
+    n, i, k, m, x, inc, lim, sqr: int
+    prim: bool
+    p: array[400, int]
+    v: array[20, int]
+  n = 399  # Number of primes to find
+
+  # Initialize p[]
+  i = 0
+  while i <= n:
+    p[i] = 0
+    i = i + 1
+
+  x = 1   # Prime candidate
+  inc = 4 # Varying step to evaluate integers
+  lim = 1
+  sqr = 4 # Square root of ...
+  m = 2   # Number of primes printed on the current line
+  i = 3   # Number of prime to print
+
+  # 1 and 3 are not found with this algorithmn
+  write('1')
+  write(' ')
+  write('3')
+  write(' ')
+
+  while i <= n:
+    x = x + inc
+    inc = 6 - inc
+    if sqr <= x:
+      # sqr = p[lim]^2
+      v[lim] = sqr
+      lim = lim + 1
+      sqr = p[lim] * p[lim]
+
+    k = 2
+    prim = true
+    while prim and (k < lim):
+      k = k + 1
+      if v[k] < x:
+        v[k] = v[k] + p[k]
+      prim = x != v[k]
+    while not prim:
+      x = x + inc
+      inc = 6 - inc
+      if sqr <= x:
+        # sqr = p[lim]^2
+        v[lim] = sqr
+        lim = lim + 1
+        sqr = p[lim] * p[lim]
+
+      k = 2
+      prim = true
+      while prim and (k < lim):
+        k = k + 1
+        if v[k] < x:
+          v[k] = v[k] + p[k]
+        prim = x != v[k]
+
+    # Print 10 results per line
+    p[i] = x
+    write(x)
+    write(' ')
+    i = i + 1
+    if m == 9:
+      writeLine
+      m = 0
+    else:
+      m = m + 1
+
+  if m > 0:
+    writeLine
+
+
+# Let's go!
+PrimeNumbers

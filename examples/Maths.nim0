@@ -1,0 +1,170 @@
+## A few examples from Oberon-0.
+## Algorithms are explained in Niklaus Wirth's book
+## [Programming in Oberon](https://people.inf.ethz.ch/wirth/ProgInOberon2004.pdf)
+##
+## Compile with `$ ./nim0 comp examples/Maths`
+##
+## Entries:
+## - Permutations: Display all permutations from a list of integers.
+## Run it with `$ ./nim0 run examples/Maths Permutations 2 3 4 5`
+##
+## - Fractions: Calculate the values of fractions d = 1/i exactly.
+## The difficulty lies, of course, in the representation of those fractions
+## that are infinite sequences of digits, e.g. 1/3 = 0.333.... Fortunately,
+## all fractions have a repeating period, and a reasonable and useful
+## solution is to mark the beginning of the period and to terminate at its end.
+## The parameter must be less than 32.
+## Run it with `$ ./nim0 run examples/Maths Fractions 16`
+##
+## - Powers: Calculate powers of 2, positive and negative, exact results with
+## as many decimal digits as needed.
+## The command parameter must be less than 32.
+## Run it with `$ ./nim0 run examples/Maths Powers 20`
+
+
+var
+  n: int
+  a: array[10, int]
+
+proc perm(k: int) =
+  var
+    i, x: int
+  if k == 0:
+    i = 0
+    while i < n:
+      write(a[i])
+      write(' ')
+      i = i + 1
+    writeLine()
+  else:
+    perm(k - 1)
+    i = 0
+    while i < k - 1:
+      x = a[i]
+      a[i] = a[k - 1]
+      a[k - 1] = x
+      perm(k - 1)
+      x = a[i]
+      a[i] = a[k - 1]
+      a[k - 1] = x
+      i = i + 1
+
+
+proc Permutations* =
+  ## Display all permutations of input (list of integers)
+  n = 0
+  while not eot():
+    readInt(a[n])
+    n = n + 1
+  perm(n)
+
+
+proc Fractions* =
+  ## Tabulate fractions 1/n
+  const
+    Base = 10
+    N = 32
+  var
+    i, j, m, r, n: int
+    d: array[N, int]  # digits
+    x: array[N, int] # index
+
+  if not eot():
+    readInt(n)
+    i = 2
+    while i <= n:
+      j = 0
+      while j < i:
+        x[j] = 0
+        j = j + 1
+      m = 0
+      r = 1
+      while x[r] == 0:
+        x[r] = m
+        r = Base * r
+        d[m] = r div i
+        r = r mod i
+        m = m + 1
+
+      write(i)
+      write('\t')
+      write('.')
+      j = 0
+      while j < x[r]:
+        write(chr(d[j] + ord('0')))
+        j = j + 1
+      write('\'')
+      while j < m:
+        write(chr(d[j] + ord('0')))
+        j = j + 1
+      writeLine()
+      i = i + 1
+
+
+proc Powers* =
+  # Calculate powers of 2
+  const
+    N = 32
+    M = 11  # M ~ N*log2
+  var
+    i, k, n, exp: int
+    c, r, t: int
+    d: array[M, int]
+    f: array[N, int]
+
+  if not eot():
+    readInt(n)
+    d[0] = 1
+    k = 1
+    exp = 1
+    while exp < n:
+      # Compute d = 2^exp
+      c = 0  # carry
+      i = 0
+      while i < k:
+        t = 2 * d[i] + c
+        if t < 10:
+          d[i] = t
+          c = 0
+        else:
+          d[i] = t - 10
+          c = 1
+        i = i + 1
+
+      if c == 1:
+        d[k] = 1
+        k = k + 1
+
+      # Write d
+      i = M
+      while i > k:
+        i = i - 1
+        write(' ')
+      while i > 0:
+        i = i - 1
+        write(chr(d[i] + ord('0')))
+      
+      # Write index
+      write(' ')
+      if exp < 10:
+        write(' ')
+      write(exp)
+      write(' ')
+
+      # Compute f = 2^ -exp
+      write('\t')
+      write('.')
+      r = 0
+      i = 1
+      while i < exp:
+        r = 10 * r + f[i]
+        f[i] = r div 2
+        r = r mod 2
+        write(chr(f[i] + ord('0')))
+        i = i + 1
+
+      f[exp] = 5
+      write(5)
+      writeLine
+      exp = exp + 1
+

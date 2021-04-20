@@ -1,0 +1,37 @@
+## First steps with Nim0
+##
+## Compile with `$ ./nim0 comp examples/Hello`
+## Run with `$ ./nim0 run exanples/Hello`
+
+type
+  string = array[20, char]
+
+proc Hello =
+  # Hello weird!
+  var
+    s: string
+    i: int
+    c: char
+  
+  s[0] = 'H'
+  s[1] = 'e'
+  s[2] = 'l'
+  s[3] = 'l'
+  s[4] = '0'
+  s[5] = ' '
+  s[6] = 'W'
+  s[7] = 'e'
+  s[8] = 'i'
+  s[9] = 'r'
+  s[10] = 'd'
+  s[11] = '!'
+  s[12] = '\0'
+  i = 0
+  c = s[i]
+  while c != '\0':
+    write(c)
+    i = i + 1
+    c = s[i]
+  writeLine
+
+Hello()
