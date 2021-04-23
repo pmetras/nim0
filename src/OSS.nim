@@ -1,5 +1,5 @@
-## Nim0 parser in Nim
-## ==================
+## Nim0 language in Nim
+## ====================
 ## The scanner.
 ##
 ## Read each ossLine of the source file character by character, detecting keywords

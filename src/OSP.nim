@@ -1,4 +1,4 @@
-## Nim0 lnaguage in Nim
+## Nim0 language in Nim
 ## ====================
 ## The parser.
 ##
