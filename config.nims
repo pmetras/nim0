@@ -49,3 +49,9 @@ task buildSite, "Build Nim0 Gitlab page site files":
   exec "pandoc --standalone --lua-filter misc/abs_url.lua --from markdown --to html --output doc/index.html README.md"
 
 
+task buildAll, "Build all Nim0 project":
+  buildTask()
+  buildExamplesTask()
+  buildDocTask()
+  buildSiteTask()
+

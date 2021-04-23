@@ -85,8 +85,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="date">2021-04-21</p>
 </header>
 <h1 id="nim0-a-minimal-nim-compiler">Nim0: a minimal Nim compiler</h1>
-<p>So you want to hack the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://github.com/nim-lang/Nim/">Nim compiler</a> but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.</p>
-<p>Nim0 is a toy compiler for a limited subset of <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://nim-lang.org/">Nim language</a>, all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://www.projectoberon.org/">Niklaus Wirth’s Oberon-0 compiler</a>. You can read Wirth’s book <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> provided in the <code>misc</code> directory and follow in the code.</p>
+<p>So you want to hack the <a href="https://github.com/nim-lang/Nim/">Nim compiler</a> but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.</p>
+<p>Nim0 is a toy compiler for a limited subset of <a href="https://nim-lang.org/">Nim language</a>, all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of <a href="https://www.projectoberon.org/">Niklaus Wirth’s Oberon-0 compiler</a>. You can read Wirth’s book <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> provided in the <code>misc</code> directory and follow in the code.</p>
 <p>The compiler can translate Nim0 source code to RISC 32 bits machine instructions (yes, that’s a 32 platform and it makes the Nim code a bit more complex). A RISC emulator lets you run the resulting code, and you can even display and follow the content of the registers and RISC assembler instructions.</p>
 <p>Nim0 language is a tiny subset of Nim, but the goal is that Nim0 code is valid Nim code. Just change the <code>.nim0</code> extension to <code>.nim</code> to run it with a serious compiler (You’ll probably need to write a few templates to adapt Nim0 I/O procedures to Nim)!</p>
 <h2 id="nim0-features">Nim0 features</h2>
@@ -272,9 +272,9 @@ Starting execution...
 <a class="sourceLine" id="cb8-18" title="18">  <span class="ex">compiling</span> examples/Sudoku.nim0</a>
 <a class="sourceLine" id="cb8-19" title="19"><span class="ex">code</span> generated examples/Sudoku, PC=492, dc=328, key=-2053649788</a></code></pre></div>
 <h2 id="nim0-ebnf-syntax">Nim0 EBNF syntax</h2>
-<p>We use <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to provide the syntax of the Nim0 language.</p>
+<p>We use <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to provide the syntax of the Nim0 language.</p>
 <p>As a quick reminder, “|” is used to define alternatives. “{ … }” describes terms that can be omitted or repeated. “[ … ]” is used for optional terms. Terminal strings are presented between quotes.</p>
-<p>In Nim0 like in Nim, spaces are part of the grammar. Indentation is represented using the <code>IND&gt;</code>, <code>IND=</code> and <code>DED</code> pseudo terms with a context value (see <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://nim-lang.org/docs/manual.html#lexical-analysis-indentation">Nim documentation</a> for detailed explanation):</p>
+<p>In Nim0 like in Nim, spaces are part of the grammar. Indentation is represented using the <code>IND&gt;</code>, <code>IND=</code> and <code>DED</code> pseudo terms with a context value (see <a href="https://nim-lang.org/docs/manual.html#lexical-analysis-indentation">Nim documentation</a> for detailed explanation):</p>
 <ul>
 <li><code>IND=</code> Same level of indentation as the preceding line.</li>
 <li><code>IND&gt;</code> Must be indented relative to preceding line.</li>
@@ -321,11 +321,11 @@ module = declarations [statementSequence].</code></pre>
       break</code></pre>
 <h2 id="the-source-files">The source files</h2>
 <ul>
-<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/OSS.html"><code>OSS.nim</code></a>: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.</li>
-<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/OSP.html"><code>OSP.nim</code></a>: The compiler parser, that defines the syntax of the Nim0 language.</li>
-<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/OSG.html"><code>OSG.nim</code></a>: The code generator for the RISC target machine.</li>
-<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/RISC.html"><code>RISC.nim</code></a>: The RISC processor emulator, used to execute compiled programs.</li>
-<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/nim0.html"><code>nim0.nim</code></a>: The Nim0 compiler driver.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//doc/OSS.html"><code>OSS.nim</code></a>: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//doc/OSP.html"><code>OSP.nim</code></a>: The compiler parser, that defines the syntax of the Nim0 language.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//doc/OSG.html"><code>OSG.nim</code></a>: The code generator for the RISC target machine.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//doc/RISC.html"><code>RISC.nim</code></a>: The RISC processor emulator, used to execute compiled programs.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//doc/nim0.html"><code>nim0.nim</code></a>: The Nim0 compiler driver.</li>
 </ul>
 <p>All source files are cross-indexed with Wirth’s <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> book. Reference like <code>[CC13]</code> refers to page 13 of this document. Procedure and variable names are based on Wirth’s original names, but a module prefix has been appended for public names and procedures. For instance, <code>ossId</code> is defined in module <code>OSS.nim</code> in Nim0 while the original name is <code>id</code>.</p>
 <h2 id="differences-with-wirths-compiler">Differences with Wirth’s compiler</h2>

@@ -3,28 +3,32 @@
 -- Relative URL "misc/CompilerConstruction.pdf" is replaced by
 -- "https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf"
 -- when generating static pages.
--- The absolute base URL is taken from the "webroot" metadata element that must
+-- Relative URL "/doc/OSG.html" is replaced by
+-- "https://pmetras.gitlab.io/nim0/doc/OSG.html"
+-- The absolute base URLs are taken from the "webroot" and "gitroot" metadata elements that must
 -- be defined in the Markdown document.
 
--- The value that will be retrieved from the Metadata of the Markdown document
+-- The values that will be retrieved from the Metadata of the Markdown document
 local webroot = nil
+local gitroot = nil
 
--- Set webroot from document metadata "webroot" attribute.
+-- Set webroot and gitroot from document metadata attributes.
 function Meta(meta)
   webroot = meta.webroot[1]
   webroot = webroot["text"]
+  gitroot = meta.gitroot[1]
+  gitroot = gitroot["text"]
 end
 
--- Fix relative URL prepending webroot value when defined.
+-- Fix relative URL prepending base value when defined.
 function fix_link(url)
-  if webroot == nil then
+  if string.sub(url, 1, 4) == "http" then
     return url
-  end
-
-  if url.sub(1, 4) ~= "http" then
+  elseif string.sub(url, 1, 1) == "/" then
     return webroot .. url
+  else
+    return gitroot .. url
   end
-  return url
 end
 
 -- Check links URL <a ref=...>
