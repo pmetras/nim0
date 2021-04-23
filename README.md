@@ -1,3 +1,12 @@
+---
+title: Nim0, a compiler for a subset of Nim language to a RISC CPU with an emulator
+author: Pierre Métras <pierre@alterna.tv>
+date: 2021-04-21
+keywords: compiler, construction, Niklaus Wirth, nim, toy, language, RISC, emulator, Oberon-0
+lang: en
+webroot: https://gitlab.com/pmetras/nim0/-/blob/master/
+---
+
 # Nim0: a minimal Nim compiler
 
 So you want to hack the [Nim compiler](https://github.com/nim-lang/Nim/) but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.
@@ -288,11 +297,11 @@ template until*(cond, body: untyped): untyped =
 
 ## The source files
 
-- `OSS.nim`: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.
-- `OSP.nim`: The compiler parser, that defines the syntax of the Nim0 language.
-- `OSG.nim`: The code generator for the RISC target machine.
-- `RISC.nim`: The RISC processor emulator, used to execute compiled programs.
-- `nim0.nim`: The Nim0 compiler driver.
+- [`OSS.nim`](doc/OSS.html): The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.
+- [`OSP.nim`](doc/OSP.html): The compiler parser, that defines the syntax of the Nim0 language.
+- [`OSG.nim`](doc/OSG.html): The code generator for the RISC target machine.
+- [`RISC.nim`](doc/RISC.html): The RISC processor emulator, used to execute compiled programs.
+- [`nim0.nim`](doc/nim0.html): The Nim0 compiler driver.
 
 All source files are cross-indexed with Wirth's [Compiler Construction](misc/CompilerConstruction.pdf) book. Reference like `[CC13]` refers to page 13 of this document. Procedure and variable names are based on Wirth's original names, but a module prefix has been appended for public names and procedures. For instance, `ossId` is defined in module `OSS.nim` in Nim0 while the original name is `id`.
 

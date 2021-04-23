@@ -42,3 +42,10 @@ task buildDoc, "Build Nim0 documentation":
   exec "nim doc --outdir:doc" & url & " src/OSG.nim"
   exec "nim doc --outdir:doc" & url & " src/RISC.nim"
 
+
+task buildSite, "Build Nim0 Gitlab page site files":
+  # Process the README.md document and apply Lua filter to translate relative URLs
+  # to absolute ones.
+  exec "pandoc --standalone --lua-filter misc/abs_url.lua --from markdown --to html --output doc/index.html README.md"
+
+

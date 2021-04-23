@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>OSS</title>
+<title>src/OSS</title>
 <link rel="stylesheet" type="text/css" href="nimdoc.out.css">
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -56,13 +56,15 @@ function main() {
     }
   }
 }
+
+window.addEventListener('DOMContentLoaded', main);
 </script>
 
 </head>
-<body onload="main()">
+<body>
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">OSS</h1>
+    <h1 class="title">src/OSS</h1>
     <div class="row">
   <div class="three columns">
   <div class="theme-switch-wrapper">
@@ -244,39 +246,39 @@ function main() {
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">ossIndentPop
       <li><a class="reference" href="#ossIndentPop"
-    title="ossIndentPop()">ossIndentPop</a></li>
+    title="ossIndentPop()">ossIndentPop()</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ossIndentSup
       <li><a class="reference" href="#ossIndentSup%2Cstring"
-    title="ossIndentSup(msg: string = &quot;&quot;)">ossIndentSup,<wbr>string</a></li>
+    title="ossIndentSup(msg: string = &quot;&quot;)">ossIndentSup(msg: string = &quot;&quot;)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ossMark
       <li><a class="reference" href="#ossMark%2Cstring"
-    title="ossMark(msg: string)">ossMark,<wbr>string</a></li>
+    title="ossMark(msg: string)">ossMark(msg: string)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ossIndentEqual
       <li><a class="reference" href="#ossIndentEqual%2Cstring"
-    title="ossIndentEqual(msg: string)">ossIndentEqual,<wbr>string</a></li>
+    title="ossIndentEqual(msg: string)">ossIndentEqual(msg: string)</a></li>
   <li><a class="reference" href="#ossIndentEqual"
-    title="ossIndentEqual(): bool">ossIndentEqual</a></li>
+    title="ossIndentEqual(): bool">ossIndentEqual(): bool</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ossGet
       <li><a class="reference" href="#ossGet%2Cint32"
-    title="ossGet(sym: var int32)">ossGet,<wbr>int32</a></li>
+    title="ossGet(sym: var int32)">ossGet(sym: var int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ossSetDebugPc
       <li><a class="reference" href="#ossSetDebugPc%2Cint32"
-    title="ossSetDebugPc(pc: int32)">ossSetDebugPc,<wbr>int32</a></li>
+    title="ossSetDebugPc(pc: int32)">ossSetDebugPc(pc: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ossInit
       <li><a class="reference" href="#ossInit%2CFile%2Cint%2CFile"
-    title="ossInit(f: File; pos: int; o: File)">ossInit,<wbr>File,<wbr>int,<wbr>File</a></li>
+    title="ossInit(f: File; pos: int; o: File)">ossInit(f: File; pos: int; o: File)</a></li>
 
   </ul>
 
@@ -285,8 +287,11 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">until
       <li><a class="reference" href="#until.t%2Cuntyped%2Cuntyped"
-    title="until(cond, body: untyped): untyped">until</a></li>
+    title="until(cond, body: untyped): untyped">until(cond, body: untyped): untyped</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -766,58 +771,58 @@ Source debug information for verbose mode.
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
 <a id="ossMark,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossMark%2Cstring"><span class="Identifier">ossMark</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossMark%2Cstring"><span class="Identifier">ossMark</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Print the error message <tt class="docutils literal"><span class="pre">msg</span></tt> with location information in source file.
+Print the error message <tt class="docutils literal"><span class="pre"><span class="Identifier">msg</span></span></tt> with location information in source file.
 
 </dd>
 <a id="ossSetDebugPc,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossSetDebugPc%2Cint32"><span class="Identifier">ossSetDebugPc</span></a><span class="Other">(</span><span class="Identifier">pc</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossSetDebugPc%2Cint32"><span class="Identifier">ossSetDebugPc</span></a><span class="Other">(</span><span class="Identifier">pc</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Save the program counter (PC) corresponding to a source ossLine, if not already saved. Else set the sentinel.
 
 </dd>
 <a id="ossIndentPop"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentPop"><span class="Identifier">ossIndentPop</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentPop"><span class="Identifier">ossIndentPop</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Pop the top indentation from the stack of levels
 
 </dd>
 <a id="ossIndentSup,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentSup%2Cstring"><span class="Identifier">ossIndentSup</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentSup%2Cstring"><span class="Identifier">ossIndentSup</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Check that the current indentation level is higher than the top of the stack of levels, else prints the error message <tt class="docutils literal"><span class="pre">msg</span></tt>.
+Check that the current indentation level is higher than the top of the stack of levels, else prints the error message <tt class="docutils literal"><span class="pre"><span class="Identifier">msg</span></span></tt>.
 
 </dd>
 <a id="ossIndentEqual,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentEqual%2Cstring"><span class="Identifier">ossIndentEqual</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentEqual%2Cstring"><span class="Identifier">ossIndentEqual</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Check that the current indentation level is the same than the top of the stack of levels, else prints an error message.
 
 </dd>
 <a id="ossIndentEqual"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentEqual"><span class="Identifier">ossIndentEqual</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossIndentEqual"><span class="Identifier">ossIndentEqual</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Check that the current identation level is the same than the top of the stack of levels, returning the result instead of printing an error message.
 
 </dd>
 <a id="ossGet,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossGet%2Cint32"><span class="Identifier">ossGet</span></a><span class="Other">(</span><span class="Identifier">sym</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span>
-                              <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossGet%2Cint32"><span class="Identifier">ossGet</span></a><span class="Other">(</span><span class="Identifier">sym</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span>
+                              <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Get a new symbol from source code scanning. Its entry in the keywords table is returned into <tt class="docutils literal"><span class="pre">ossSym</span></tt>.
+Get a new symbol from source code scanning. Its entry in the keywords table is returned into <tt class="docutils literal"><span class="pre"><span class="Identifier">ossSym</span></span></tt>.
 
 </dd>
 <a id="ossInit,File,int,File"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ossInit%2CFile%2Cint%2CFile"><span class="Identifier">ossInit</span></a><span class="Other">(</span><span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span><span class="Other">;</span> <span class="Identifier">pos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">o</span><span class="Other">:</span> <span class="Identifier">File</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#ossInit%2CFile%2Cint%2CFile"><span class="Identifier">ossInit</span></a><span class="Other">(</span><span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span><span class="Other">;</span> <span class="Identifier">pos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">o</span><span class="Other">:</span> <span class="Identifier">File</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Initialize scanner module global variables.
@@ -832,7 +837,7 @@ Initialize scanner module global variables.
 <dt><pre><span class="Keyword">template</span> <a href="#until.t%2Cuntyped%2Cuntyped"><span class="Identifier">until</span></a><span class="Other">(</span><span class="Identifier">cond</span><span class="Other">,</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
-Reproduces the <tt class="docutils literal"><span class="pre">repeat</span></tt> ... <tt class="docutils literal"><span class="pre">until condition</span></tt> loop that exists in Oberon.
+Reproduces the <tt class="docutils literal"><span class="pre"><span class="Identifier">repeat</span></span></tt> ... <tt class="docutils literal"><span class="pre"><span class="Identifier">until</span> <span class="Identifier">condition</span></span></tt> loop that exists in Oberon.
 
 </dd>
 
@@ -845,7 +850,7 @@ Reproduces the <tt class="docutils literal"><span class="pre">repeat</span></tt>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-04-20 01:06:52 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-04-23 00:10:02 UTC</small>
       </div>
     </div>
   </div>

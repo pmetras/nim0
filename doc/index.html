@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Pierre Métras pierre@alterna.tv" />
+  <meta name="dcterms.date" content="2021-04-21" />
+  <meta name="keywords" content="compiler, construction, Niklaus Wirth, nim, toy, language, RISC, emulator, Oberon-0" />
+  <title>Nim0, a compiler for a subset of Nim language to a RISC CPU with an emulator</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Nim0, a compiler for a subset of Nim language to a RISC CPU with an emulator</h1>
+<p class="author">Pierre Métras <a href="https://gitlab.com/pmetras/nim0/-/blob/master/mailto:pierre@alterna.tv" class="email">pierre@alterna.tv</a></p>
+<p class="date">2021-04-21</p>
+</header>
+<h1 id="nim0-a-minimal-nim-compiler">Nim0: a minimal Nim compiler</h1>
+<p>So you want to hack the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://github.com/nim-lang/Nim/">Nim compiler</a> but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.</p>
+<p>Nim0 is a toy compiler for a limited subset of <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://nim-lang.org/">Nim language</a>, all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://www.projectoberon.org/">Niklaus Wirth’s Oberon-0 compiler</a>. You can read Wirth’s book <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> provided in the <code>misc</code> directory and follow in the code.</p>
+<p>The compiler can translate Nim0 source code to RISC 32 bits machine instructions (yes, that’s a 32 platform and it makes the Nim code a bit more complex). A RISC emulator lets you run the resulting code, and you can even display and follow the content of the registers and RISC assembler instructions.</p>
+<p>Nim0 language is a tiny subset of Nim, but the goal is that Nim0 code is valid Nim code. Just change the <code>.nim0</code> extension to <code>.nim</code> to run it with a serious compiler (You’ll probably need to write a few templates to adapt Nim0 I/O procedures to Nim)!</p>
+<h2 id="nim0-features">Nim0 features</h2>
+<p>Compared with Nim, Nim0 implements only minimal features to understand compiler construction:</p>
+<ul>
+<li>Only three basic types: <code>bool</code>, <code>char</code> and <code>int</code>. No <code>string</code> or <code>seq</code>, no advanced data structures. But <code>array</code> and <em>simple</em> <code>object</code> are supported.</li>
+<li>The list of missing Nim feature is too long to be complete, because Nim is a complex language while Nim0 is a toy one to understand compilation. No imports. No libraries. The system procedures are limited to a handfull of functions. No generics. No overloading but for a few I/O procedures and functions. No templates. No macros. No closures. Limited <code>for</code> loops. No <code>return</code> instruction! No exceptions. No access to intermediate variables in enclosed procedures. No all these advanced features that you use with Nim.</li>
+<li>Source code is limited to 1000 lines. Generated code is limited to 8 KB.</li>
+<li>A one-pass compiler that generates RISC instructions.</li>
+<li>A RISC emulator to execute generated code.</li>
+<li>More strict on syntax and a few other differences like identifiers are case-sensitive…</li>
+<li>We have also sometimes <em>optimized</em> the Nim code compared with Oberon’s one used in the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> book when Nim syntax was easier to read but we tried to limit ourself to respect Wirth’s style in the book.</li>
+</ul>
+<p>Can you write real programs with such limited features? Have a look at the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/examples/">examples</a>…</p>
+<h2 id="usage">Usage</h2>
+<pre class="out"><code>nim0 compiler and runtime.
+Usage: nim0 action [options]* source [args]*
+
+action    comp  Compile Nim0 source
+          run   Excute source object file
+
+options   -s    Show generated assembler after compilation.
+
+source          When compiling, Nim0 source code. Assume .nim0 extension.
+                When execution, RISC object file. Assume .rsc extension
+
+args            Command to be executed and parameters.</code></pre>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>Nim0 has been developed and tested on Linux with Nim 1.5. I don’t know if it works on Windows or other environments. It’ll probably require small adjustments. If you have a Nim compiler on your Linux machine, you can try it right now!</p>
+<h2 id="example">Example</h2>
+<p>Let’s try it by yourself. First compile is to create the Nim0 compiler (look at <a href="https://gitlab.com/pmetras/nim0/-/blob/master/config.nims">config.nims</a> for the project’s other tasks).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">nim0</span>$ nim build</a></code></pre></div>
+<p>It creates the <code>nim0</code> executable in the current directory.</p>
+<p>Now, write your first Nim0 program and name it <code>examples/Alpha0.nim0</code> (You’re lucky, I typed it for you; look into the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/examples/">examples</a> folder).</p>
+<pre class="nim"><code>## My first Nim0 program: print integer squares in range 0 ... 10.
+
+var
+  i: int
+  r: int
+
+proc sqr(x: int; sqrX: var int) =
+  # Square the value of `x` and return it in `sqrX`.
+  sqrX = x * x
+
+for i in 0 .. 10:
+  sqr(i, r)
+  write(i)
+  write(&#39;*&#39;)
+  write(i)
+  write(&#39;=&#39;)
+  write(r)
+  writeLine()</code></pre>
+<p>You can compile your first Nim0 program now:</p>
+<pre class="out"><code>nim0$ ./nim0 comp examples/Alpha0
+Nim0 Compiler v1.0
+  compiling examples/Alpha0.nim0
+code generated examples/Alpha0, PC=40, dc=8, key=-1973735804</code></pre>
+<p>If you want to see the generated RISC assembler code, add the <code>-v</code> option.</p>
+<pre class="out"><code>nim0$ ./nim0 comp -v examples/Alpha0
+Nim0 Compiler v1.0
+  compiling examples/Alpha0.nim0
+code generated examples/Alpha0, PC=40, dc=8, key=-1973735804
+4EE9000CAFE00000
+                                        # 001 ## My first Nim0 program: print integer squares in range 0 ... 10.
+                                        # 002 
+                                        # 003 var
+                                        # 004   i: int
+                                        # 005   r: int
+                                        # 006 
+                                        # 007 proc sqr(x: int; sqrX: var int) =
+0000 4EE9000C        SUB SP, SP, 12
+                                        # 008   # Square the value of `x` and return it in `sqrX`.
+                                        # 009   sqrX = x * x
+0001 AFE00000        STW LNK, SP, 0
+0002 A0E00004        STW R0, SP, 4
+0003 A1E00008        STW R1, SP, 8
+                                        # 010 
+0004 80E00004        LDW R0, SP, 4
+0005 81E00004        LDW R1, SP, 4
+0006 000A0001        MUL R0, R0, R1
+0007 81E00008        LDW R1, SP, 8
+0008 A0100000        STW R0, R1, 0
+0009 8FE00000        LDW LNK, SP, 0
+0010 4EE8000C        ADD SP, SP, 12
+0011 C700000F        B LNK
+0012 4EE90004        SUB SP, SP, 4
+0013 AFE00000        STW LNK, SP, 0
+0014 40000000        MOV R0, 0
+0015 A0D00000        STW R0, SB, 0
+                                        # 011 for i in 0 .. 10:
+0016 80D00000        LDW R0, SB, 0
+0017 4009000A        CMP R0, 10
+0018 EE000012        BGT 18
+0019 80D00000        LDW R0, SB, 0
+                                        # 012   sqr(i, r)
+0020 41D80004        ADD R1, SB, 4
+0021 F7FFFFEA        BL -22
+                                        # 013   write(i)
+0022 80D00000        LDW R0, SB, 0
+0023 A00FFFFC        writeInt &lt;- R0
+                                        # 014   write(&#39;*&#39;)
+0024 4000002A        MOV R0, 42
+0025 A00FFFFB        writeChar &lt;- R0
+                                        # 015   write(i)
+0026 80D00000        LDW R0, SB, 0
+0027 A00FFFFC        writeInt &lt;- R0
+                                        # 016   write(&#39;=&#39;)
+0028 4000003D        MOV R0, 61
+0029 A00FFFFB        writeChar &lt;- R0
+                                        # 017   write(r)
+0030 80D00004        LDW R0, SB, 4
+0031 A00FFFFC        writeInt &lt;- R0
+                                        # 018   writeLine()
+0032 A00FFFFA        writeLine
+0033 80D00000        LDW R0, SB, 0
+0034 40080001        ADD R0, R0, 1
+0035 A0D00000        STW R0, SB, 0
+0036 E7FFFFEB        B -21
+0037 8FE00000        LDW LNK, SP, 0
+0038 4EE80004        ADD SP, SP, 4
+0039 C700000F        B LNK</code></pre>
+<p>OK. Now let’s run the compiled code:</p>
+<pre class="out"><code>nim0$ ./nim0 run examples/Alpha0
+0*0=0
+1*1=1
+2*2=4
+3*3=9
+4*4=16
+5*5=25
+6*6=36
+7*7=49
+8*8=64
+9*9=81
+10*10=100</code></pre>
+<p>You can even trace program execution and see the content of the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/RISC-Arch.pdf">RISC registers</a>. Before program execution, Nim0 dumps the RISC assembler after code relocation in memory, showing the areas for global variables, code and execution stack. As it is quite verbose, I dump only the most representative parts in the truncated dump below.</p>
+<pre class="out"><code>nim0$ ./nim0 run -v examples/Alpha0
+Global variables in memory adresses Mem[0 .. 1]
+Module code in memory adresses      Mem[2 .. 41]
+Runtime stack in memory adresses    Mem[42 .. 2047]
+
+Resulting RISC assembler
+0002 4EE9000C        SUB SP, SP, 12
+0003 AFE00000        STW LNK, SP, 0
+0004 A0E00004        STW R0, SP, 4
+0005 A1E00008        STW R1, SP, 8
+... truncated ...
+
+Starting execution...
+                                        PC=14, R0=0, R1=0, R2=0, R3=0, R4=0, R5=0, R6=0, R7=0, R8=0, R9=0, R10=0, R11=0, R12=0, SB=0&#39;u32, SP=8152&#39;u32, LNK=0&#39;u32, N=false, Z=false
+000001        0014 4EE90004        SUB SP, SP, 4
+                                        PC=15, R0=0, R1=0, R2=0, R3=0, R4=0, R5=0, R6=0, R7=0, R8=0, R9=0, R10=0, R11=0, R12=0, SB=0&#39;u32, SP=8148&#39;u32, LNK=0&#39;u32, N=false, Z=false
+000002        0015 AFE00000        STW LNK, SP, 0
+                                                        Mem[2036 | 8144]=2863311530 -&gt; AAAAAAAA
+                                                        Mem[2037 | 8148]=2863311530 -&gt; AAAAAAAA &lt;
+                                                        Mem[2038 | 8152]=2863311530 -&gt; AAAAAAAA
+                                                After------------
+                                                        Mem[2036 | 8144]=2863311530 -&gt; AAAAAAAA
+                                                        Mem[2037 | 8148]=0 -&gt; 00000000 &lt;
+                                                        Mem[2038 | 8152]=2863311530 -&gt; AAAAAAAA
+                                        PC=16, R0=0, R1=0, R2=0, R3=0, R4=0, R5=0, R6=0, R7=0, R8=0, R9=0, R10=0, R11=0, R12=0, SB=0&#39;u32, SP=8148&#39;u32, LNK=0&#39;u32, N=false, Z=false
+000003        0016 40000000        MOV R0, 0
+                                        PC=17, R0=0, R1=0, R2=0, R3=0, R4=0, R5=0, R6=0, R7=0, R8=0, R9=0, R10=0, R11=0, R12=0, SB=0&#39;u32, SP=8148&#39;u32, LNK=0&#39;u32, N=false, Z=true
+000004        0017 A0D00000        STW R0, SB, 0
+... truncated ...</code></pre>
+<p>To compile all Nim0 supplied examples, run the Nim task <code>buildExamples</code>. Look at the example source to see how to invoke it: some of them use the notion of Oberon command as defined in Wirth’s documents, while others are more like Nim scripts.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">nim0</span>$ nim buildExamples</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="ex">Nim0</span> Compiler v1.0</a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="ex">compiling</span> examples/Hello.nim0</a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="ex">code</span> generated examples/Hello, PC=59, dc=0, key=1338925179</a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="ex">Nim0</span> Compiler v1.0</a>
+<a class="sourceLine" id="cb8-6" title="6">  <span class="ex">compiling</span> examples/Factorial.nim0</a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="ex">code</span> generated examples/Factorial, PC=49, dc=8, key=982993432</a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="ex">Nim0</span> Compiler v1.0</a>
+<a class="sourceLine" id="cb8-9" title="9">  <span class="ex">compiling</span> examples/MagicSquares.nim0</a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="ex">code</span> generated examples/MagicSquares, PC=116, dc=0, key=-90451726</a>
+<a class="sourceLine" id="cb8-11" title="11"><span class="ex">Nim0</span> Compiler v1.0</a>
+<a class="sourceLine" id="cb8-12" title="12">  <span class="ex">compiling</span> examples/Maths.nim0</a>
+<a class="sourceLine" id="cb8-13" title="13"><span class="ex">code</span> generated examples/Maths, PC=386, dc=44, key=201681063</a>
+<a class="sourceLine" id="cb8-14" title="14"><span class="ex">Nim0</span> Compiler v1.0</a>
+<a class="sourceLine" id="cb8-15" title="15">  <span class="ex">compiling</span> examples/PrimeNumbers.nim0</a>
+<a class="sourceLine" id="cb8-16" title="16"><span class="ex">code</span> generated examples/PrimeNumbers, PC=235, dc=0, key=1527623905</a>
+<a class="sourceLine" id="cb8-17" title="17"><span class="ex">Nim0</span> Compiler v1.0</a>
+<a class="sourceLine" id="cb8-18" title="18">  <span class="ex">compiling</span> examples/Sudoku.nim0</a>
+<a class="sourceLine" id="cb8-19" title="19"><span class="ex">code</span> generated examples/Sudoku, PC=492, dc=328, key=-2053649788</a></code></pre></div>
+<h2 id="nim0-ebnf-syntax">Nim0 EBNF syntax</h2>
+<p>We use <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a> to provide the syntax of the Nim0 language.</p>
+<p>As a quick reminder, “|” is used to define alternatives. “{ … }” describes terms that can be omitted or repeated. “[ … ]” is used for optional terms. Terminal strings are presented between quotes.</p>
+<p>In Nim0 like in Nim, spaces are part of the grammar. Indentation is represented using the <code>IND&gt;</code>, <code>IND=</code> and <code>DED</code> pseudo terms with a context value (see <a href="https://gitlab.com/pmetras/nim0/-/blob/master/https://nim-lang.org/docs/manual.html#lexical-analysis-indentation">Nim documentation</a> for detailed explanation):</p>
+<ul>
+<li><code>IND=</code> Same level of indentation as the preceding line.</li>
+<li><code>IND&gt;</code> Must be indented relative to preceding line.</li>
+<li><code>DED</code> Pops out the indent level from the indent stack.</li>
+</ul>
+<pre class="ebnf"><code>ident = letter {letter | digit}.
+integer = digit {digit}.
+comment = &quot;#&quot; {chars ignored to the end of the line}
+
+selector = {&quot;.&quot; ident | &quot;[&quot; expression &quot;]&quot;}.
+number = integer.
+factor = ident selector | number | &quot;(&quot; expression &quot;)&quot; | &quot;not&quot; factor.
+term = factor {(&quot;*&quot; | &quot;div&quot; | &quot;mod&quot; | &quot;and&quot;) factor}.
+simpleExpression = [&quot;+&quot; | &quot;-&quot;] term {(&quot;+&quot; | &quot;-&quot; | &quot;or&quot;) term}.
+expression = simpleExpression [(&quot;=&quot; | &quot;!=&quot; | &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot;) simpleExpression].
+assignment = ident selector &quot;-&quot; expression.
+actualParameters = &quot;(&quot; [expression {&quot;,&quot; expression}] &quot;)&quot;.
+procedureCall = ident [actualParameters].
+ifStatement = &quot;if&quot; expression &quot;:&quot; IND&gt; statementSequence {IND= &quot;elif&quot; expression &quot;:&quot; IND&gt; statementSequence} [IND= &quot;else:&quot; IND&gt; statementSequence] DED.
+whileStatement = &quot;while&quot; expression &quot;:&quot; IND&gt; statementSequence DED.
+untilStatement = &quot;until&quot; expression &quot;:&quot; IND&gt; statementSequence DED.
+forStatement = &quot;for&quot; ident &quot;in&quot; expression &quot;..&quot; expression &quot;:&quot; IND&gt; statementSequence DED.
+blockStatement = &quot;block&quot; &quot;:&quot; IND&gt; statementSequence DED.
+statement = [assignment | procedureCall | ifStatement | whileStatement | untilStatement | forStatement | blockStatement].
+statementSequence = statement {IND= statement}.
+identList = ident {&quot;,&quot; ident}.
+arrayType = &quot;array&quot; &quot;[&quot; expression &quot;,&quot; type &quot;]&quot;.
+fieldList = [identList &quot;:&quot; type].
+objectType = &quot;object&quot; IND&gt; fieldList {&quot;,&quot; fieldList} DED.
+type = ident | arrayType | objectType.
+fpSection = identList &quot;:&quot; [&quot;var&quot;] type.
+formalParameters = &quot;(&quot; [fpSection {&quot;;&quot; fpSection}] &quot;)&quot;.
+procedureHeading = &quot;proc&quot; ident [formalParameters].
+procedureBody = [declaration | statementSequence].
+procedureDeclaration = procedureHeading &quot;=&quot; IND&gt; procedureBody DED.
+declarations = [&quot;const&quot; IND&gt; {IND= ident &quot;=&quot; expression} DED] | [&quot;type&quot; IND&gt; {IND= ident &quot;=&quot; type} DED] | [&quot;var&quot; IND&gt; {IND= identList &quot;:&quot; type} DED] | {procedureDeclaration}.
+module = declarations [statementSequence].</code></pre>
+<p>The <code>until</code> control structure does not exist in Nim but is present in Oberon-0 and was kept in the code because it can be useful sometimes (it is used a few times in the Nim0 compiler). It can be easily defined in Nim as:</p>
+<pre class="nim"><code>template until*(cond, body: untyped): untyped =
+  ## Reproduces Oberon-0 `REPEAT body UNTIL cond;`
+  while true:
+    body
+    if cond:
+      break</code></pre>
+<h2 id="the-source-files">The source files</h2>
+<ul>
+<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/OSS.html"><code>OSS.nim</code></a>: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.</li>
+<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/OSP.html"><code>OSP.nim</code></a>: The compiler parser, that defines the syntax of the Nim0 language.</li>
+<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/OSG.html"><code>OSG.nim</code></a>: The code generator for the RISC target machine.</li>
+<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/RISC.html"><code>RISC.nim</code></a>: The RISC processor emulator, used to execute compiled programs.</li>
+<li><a href="https://gitlab.com/pmetras/nim0/-/blob/master/doc/nim0.html"><code>nim0.nim</code></a>: The Nim0 compiler driver.</li>
+</ul>
+<p>All source files are cross-indexed with Wirth’s <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> book. Reference like <code>[CC13]</code> refers to page 13 of this document. Procedure and variable names are based on Wirth’s original names, but a module prefix has been appended for public names and procedures. For instance, <code>ossId</code> is defined in module <code>OSS.nim</code> in Nim0 while the original name is <code>id</code>.</p>
+<h2 id="differences-with-wirths-compiler">Differences with Wirth’s compiler</h2>
+<ul>
+<li>Of course, we use Nim instead of Oberon code.</li>
+<li>Better error messages.</li>
+<li>Option to dump generated RISC assembler after compilation, with reference to source code.</li>
+<li>I’ve tried to keep with Wirth’s style of code as much as possible even if a better Nim style would have been possible, particularly in the RISC.nim module. But there are many places where Wirth uses hacks (like reusing the same object field for multiple different usages) or that are not clearly documented (like the standard functions and procedures or module management or are hardware dependant). These places in code could be improved.</li>
+<li>A RISC emulator to execute the generated code. The verbose mode shows the resulting assembler and the memory layout, and then executes code line by line with dump of registers and memory.</li>
+</ul>
+<h2 id="major-differences-between-nim0-and-nim">Major differences between Nim0 and Nim</h2>
+<p>Nim0 is really a <strong>toy</strong> language based on Niklaus Wirth’s Oberon-0 with a nim-like syntax. Don’t expect too much! But it can be used to write small programs and understand how they are compiled to RISC machine instructions.</p>
+<ul>
+<li>Declarations (<code>const</code>, <code>type</code> and <code>var</code> sections) must be before statements. Particulary, they can’t be mixed: you have to declare variables before the first instruction.</li>
+<li>Only 1 instruction per line.</li>
+<li><code>func</code> are not supported, so no <code>result</code> variable nor <code>return</code>. Remember that you must call <code>readInt(n)</code> instead of <code>n = readInt()</code>!</li>
+<li>Contrarily to Nim, local variables are not initialized to default value when declared. Don’t forget to initialize them! This behaviour could easily been corrected but it allows to find uninitialized variables. It’s a poor replacement for Nim compiler warnings about unitialized variables.</li>
+</ul>
+<h2 id="bugs-and-todo">Bugs and TODO</h2>
+<p>There are a few bugs, of course, as debugging a compiler is not a simple operation and I did not construct a complete test suite. Here are some bugs that you can try to correct…</p>
+<ul>
+<li>When displaying the RISC assembler resulting of a compilation, the original Nim0 source lines are not always preceding the assembler they relate to. There are many situations where the assembler line starts before the Nim0 source line. This is due to the simple algorithm used to match RISC assembler and Nim0 source lines that does not take into account the delayed code generation by the compiler. The algorithm would be more complex instead of 4 calls to <code>ossSetDebugPc</code>.</li>
+<li>The last line of the source file must be an empty line, else end of file is not correctly detected by the lexer.</li>
+<li>Contrarily to Nim, Nim0 compiler tries to resynchronize in case of syntax errors. These synchronization steps can drive the compiler into infinite loops. It would be nice to have a more robust synchronization algorithm.</li>
+</ul>
+<h2 id="how-to-extend-it">How to extend it?</h2>
+<p>Of course, you can add more features to make Nim0 more Nim compatible… Wirth lists exercises at the end of each chapter of <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a>, to add new types or control structures, or even standard procedures. You just have the choice.</p>
+<p>I’ve left some parts of Wirth’s code that can be used to relocate code if you want to support a non fixed-address memory model and play with code relocation or modules, like a system linker. You can decide also to produce better RISC code: there are many parts where you can generate better assembler, without resorting to a syntax tree (AST) like in Nim.</p>
+<p>Also, you can make the language safer. For instance, there are no checks that a variable is initialized before use nor that an index is within bounds of an array. Or you can check for overflows when doing calculations.</p>
+<p>I haven’t completed the for loop to support automatic variable declaration as I was short for time. You can find a draft in function <code>ospForStatement2</code>.</p>
+<h2 id="license">License</h2>
+<p>Nim0 is created under the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/LICENSE.md">MIT license</a>.</p>
+</body>
+</html>

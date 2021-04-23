@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>OSG</title>
+<title>src/OSG</title>
 <link rel="stylesheet" type="text/css" href="nimdoc.out.css">
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -56,13 +56,15 @@ function main() {
     }
   }
 }
+
+window.addEventListener('DOMContentLoaded', main);
 </script>
 
 </head>
-<body onload="main()">
+<body>
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">OSG</h1>
+    <h1 class="title">src/OSG</h1>
     <div class="row">
   <div class="three columns">
   <div class="theme-switch-wrapper">
@@ -267,227 +269,227 @@ function main() {
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">osgMakeConstItem
       <li><a class="reference" href="#osgMakeConstItem%2CosgItem%2CosgType%2Cint32"
-    title="osgMakeConstItem(x: var osgItem; typ: osgType; val: int32)">osgMakeConstItem,<wbr>osgItem,<wbr>osgType,<wbr>int32</a></li>
+    title="osgMakeConstItem(x: var osgItem; typ: osgType; val: int32)">osgMakeConstItem(x: var osgItem; typ: osgType; val: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgCall
       <li><a class="reference" href="#osgCall%2CosgObject"
-    title="osgCall(obj: var osgObject)">osgCall,<wbr>osgObject</a></li>
+    title="osgCall(obj: var osgObject)">osgCall(obj: var osgObject)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgWriteReg
       <li><a class="reference" href="#osgWriteReg%2Cuint32%2CFile"
-    title="osgWriteReg(r: uint32; f: File = W)">osgWriteReg,<wbr>uint32,<wbr>File</a></li>
+    title="osgWriteReg(r: uint32; f: File = W)">osgWriteReg(r: uint32; f: File = W)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgAnd1
       <li><a class="reference" href="#osgAnd1%2CosgItem"
-    title="osgAnd1(x: var osgItem)">osgAnd1,<wbr>osgItem</a></li>
+    title="osgAnd1(x: var osgItem)">osgAnd1(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgOpen
       <li><a class="reference" href="#osgOpen"
-    title="osgOpen()">osgOpen</a></li>
+    title="osgOpen()">osgOpen()</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgAddOp
       <li><a class="reference" href="#osgAddOp%2Cint32%2CosgItem%2CosgItem"
-    title="osgAddOp(op: int32; x, y: var osgItem)">osgAddOp,<wbr>int32,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgAddOp(op: int32; x, y: var osgItem)">osgAddOp(op: int32; x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgEnter
       <li><a class="reference" href="#osgEnter%2Cint32%2Cint32%2Cbool"
-    title="osgEnter(parblksize, locblksize: int32; comd: bool)">osgEnter,<wbr>int32,<wbr>int32,<wbr>bool</a></li>
+    title="osgEnter(parblksize, locblksize: int32; comd: bool)">osgEnter(parblksize, locblksize: int32; comd: bool)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgWriteLn
       <li><a class="reference" href="#osgWriteLn"
-    title="osgWriteLn()">osgWriteLn</a></li>
+    title="osgWriteLn()">osgWriteLn()</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgRelation
       <li><a class="reference" href="#osgRelation%2Cint32%2CosgItem%2CosgItem"
-    title="osgRelation(op: int32; x, y: var osgItem)">osgRelation,<wbr>int32,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgRelation(op: int32; x, y: var osgItem)">osgRelation(op: int32; x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgWriteDebugAsm
       <li><a class="reference" href="#osgWriteDebugAsm%2Cint32%2CopenArray%5Buint32%5D%2CFile"
-    title="osgWriteDebugAsm(i: int32; code: openArray[uint32] = osgCode; f: File = W)">osgWriteDebugAsm,<wbr>int32,<wbr>openArray[uint32],<wbr>File</a></li>
+    title="osgWriteDebugAsm(i: int32; code: openArray[uint32] = osgCode; f: File = W)">osgWriteDebugAsm(i: int32; code: openArray[uint32] = osgCode; f: File = W)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgSwitch
       <li><a class="reference" href="#osgSwitch%2CosgItem"
-    title="osgSwitch(x: var osgItem)">osgSwitch,<wbr>osgItem</a></li>
+    title="osgSwitch(x: var osgItem)">osgSwitch(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgChr
       <li><a class="reference" href="#osgChr%2CosgItem"
-    title="osgChr(x: var osgItem)">osgChr,<wbr>osgItem</a></li>
+    title="osgChr(x: var osgItem)">osgChr(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgField
       <li><a class="reference" href="#osgField%2CosgItem%2CosgObject"
-    title="osgField(x: var osgItem; y: osgObject)">osgField,<wbr>osgItem,<wbr>osgObject</a></li>
+    title="osgField(x: var osgItem; y: osgObject)">osgField(x: var osgItem; y: osgObject)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgCBJump
       <li><a class="reference" href="#osgCBJump%2CosgItem%2Cint32"
-    title="osgCBJump(x: var osgItem; L: int32)">osgCBJump,<wbr>osgItem,<wbr>int32</a></li>
+    title="osgCBJump(x: var osgItem; L: int32)">osgCBJump(x: var osgItem; L: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgWriteInt
       <li><a class="reference" href="#osgWriteInt%2CosgItem"
-    title="osgWriteInt(x: var osgItem)">osgWriteInt,<wbr>osgItem</a></li>
+    title="osgWriteInt(x: var osgItem)">osgWriteInt(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgDebugCode
       <li><a class="reference" href="#osgDebugCode%2Cstring"
-    title="osgDebugCode(msg: string = &quot;Code is now&quot;)">osgDebugCode,<wbr>string</a></li>
+    title="osgDebugCode(msg: string = &quot;Code is now&quot;)">osgDebugCode(msg: string = &quot;Code is now&quot;)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgCFJump
       <li><a class="reference" href="#osgCFJump%2CosgItem"
-    title="osgCFJump(x: var osgItem)">osgCFJump,<wbr>osgItem</a></li>
+    title="osgCFJump(x: var osgItem)">osgCFJump(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgWriteBool
       <li><a class="reference" href="#osgWriteBool%2CosgItem"
-    title="osgWriteBool(x: var osgItem)">osgWriteBool,<wbr>osgItem</a></li>
+    title="osgWriteBool(x: var osgItem)">osgWriteBool(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgHeader
       <li><a class="reference" href="#osgHeader%2Cint32"
-    title="osgHeader(size: int32)">osgHeader,<wbr>int32</a></li>
+    title="osgHeader(size: int32)">osgHeader(size: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgStore
       <li><a class="reference" href="#osgStore%2CosgItem%2CosgItem"
-    title="osgStore(x, y: var osgItem)">osgStore,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgStore(x, y: var osgItem)">osgStore(x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgOr1
       <li><a class="reference" href="#osgOr1%2CosgItem"
-    title="osgOr1(x: var osgItem)">osgOr1,<wbr>osgItem</a></li>
+    title="osgOr1(x: var osgItem)">osgOr1(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgCheckRegs
       <li><a class="reference" href="#osgCheckRegs"
-    title="osgCheckRegs()">osgCheckRegs</a></li>
+    title="osgCheckRegs()">osgCheckRegs()</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgFJump
       <li><a class="reference" href="#osgFJump%2Cint32"
-    title="osgFJump(L: var int32)">osgFJump,<wbr>int32</a></li>
+    title="osgFJump(L: var int32)">osgFJump(L: var int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgReturn
       <li><a class="reference" href="#osgReturn%2Cint32"
-    title="osgReturn(size: int32)">osgReturn,<wbr>int32</a></li>
+    title="osgReturn(size: int32)">osgReturn(size: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgAnd2
       <li><a class="reference" href="#osgAnd2%2CosgItem%2CosgItem"
-    title="osgAnd2(x, y: var osgItem)">osgAnd2,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgAnd2(x, y: var osgItem)">osgAnd2(x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgFixLink
       <li><a class="reference" href="#osgFixLink%2Cint32"
-    title="osgFixLink(L: int32)">osgFixLink,<wbr>int32</a></li>
+    title="osgFixLink(L: int32)">osgFixLink(L: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgOpenInput
       <li><a class="reference" href="#osgOpenInput"
-    title="osgOpenInput()">osgOpenInput</a></li>
+    title="osgOpenInput()">osgOpenInput()</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgValueParam
       <li><a class="reference" href="#osgValueParam%2CosgItem"
-    title="osgValueParam(x: var osgItem)">osgValueParam,<wbr>osgItem</a></li>
+    title="osgValueParam(x: var osgItem)">osgValueParam(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgNeg
       <li><a class="reference" href="#osgNeg%2CosgItem"
-    title="osgNeg(x: var osgItem)">osgNeg,<wbr>osgItem</a></li>
+    title="osgNeg(x: var osgItem)">osgNeg(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgWriteChar
       <li><a class="reference" href="#osgWriteChar%2CosgItem"
-    title="osgWriteChar(x: var osgItem)">osgWriteChar,<wbr>osgItem</a></li>
+    title="osgWriteChar(x: var osgItem)">osgWriteChar(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgClose
       <li><a class="reference" href="#osgClose%2Cstring%2Cint32%2Cint32%2CosgObject"
-    title="osgClose(modid: string; key, datasize: int32; topScope: osgObject)">osgClose,<wbr>string,<wbr>int32,<wbr>int32,<wbr>osgObject</a></li>
+    title="osgClose(modid: string; key, datasize: int32; topScope: osgObject)">osgClose(modid: string; key, datasize: int32; topScope: osgObject)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgEot
       <li><a class="reference" href="#osgEot%2CosgItem"
-    title="osgEot(x: var osgItem)">osgEot,<wbr>osgItem</a></li>
+    title="osgEot(x: var osgItem)">osgEot(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgReadInt
       <li><a class="reference" href="#osgReadInt%2CosgItem"
-    title="osgReadInt(x: var osgItem)">osgReadInt,<wbr>osgItem</a></li>
+    title="osgReadInt(x: var osgItem)">osgReadInt(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgOrd
       <li><a class="reference" href="#osgOrd%2CosgItem"
-    title="osgOrd(x: var osgItem)">osgOrd,<wbr>osgItem</a></li>
+    title="osgOrd(x: var osgItem)">osgOrd(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgNot
       <li><a class="reference" href="#osgNot%2CosgItem"
-    title="osgNot(x: var osgItem)">osgNot,<wbr>osgItem</a></li>
+    title="osgNot(x: var osgItem)">osgNot(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgMulOp
       <li><a class="reference" href="#osgMulOp%2CosgItem%2CosgItem"
-    title="osgMulOp(x, y: var osgItem)">osgMulOp,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgMulOp(x, y: var osgItem)">osgMulOp(x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgOr2
       <li><a class="reference" href="#osgOr2%2CosgItem%2CosgItem"
-    title="osgOr2(x, y: var osgItem)">osgOr2,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgOr2(x, y: var osgItem)">osgOr2(x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgBJump
       <li><a class="reference" href="#osgBJump%2Cint32"
-    title="osgBJump(L: int32)">osgBJump,<wbr>int32</a></li>
+    title="osgBJump(L: int32)">osgBJump(L: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgDecode
       <li><a class="reference" href="#osgDecode"
-    title="osgDecode()">osgDecode</a></li>
+    title="osgDecode()">osgDecode()</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgOpenArrayParam
       <li><a class="reference" href="#osgOpenArrayParam%2CosgItem"
-    title="osgOpenArrayParam(x: var osgItem)">osgOpenArrayParam,<wbr>osgItem</a></li>
+    title="osgOpenArrayParam(x: var osgItem)">osgOpenArrayParam(x: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgMakeItem
       <li><a class="reference" href="#osgMakeItem%2CosgItem%2CosgObject%2Cint32"
-    title="osgMakeItem(x: var osgItem; y: osgObject; curlev: int32)">osgMakeItem,<wbr>osgItem,<wbr>osgObject,<wbr>int32</a></li>
+    title="osgMakeItem(x: var osgItem; y: osgObject; curlev: int32)">osgMakeItem(x: var osgItem; y: osgObject; curlev: int32)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgIndex
       <li><a class="reference" href="#osgIndex%2CosgItem%2CosgItem"
-    title="osgIndex(x, y: var osgItem)">osgIndex,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgIndex(x, y: var osgItem)">osgIndex(x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgDivOp
       <li><a class="reference" href="#osgDivOp%2Cint32%2CosgItem%2CosgItem"
-    title="osgDivOp(op: int32; x, y: var osgItem)">osgDivOp,<wbr>int32,<wbr>osgItem,<wbr>osgItem</a></li>
+    title="osgDivOp(op: int32; x, y: var osgItem)">osgDivOp(op: int32; x, y: var osgItem)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgVarParam
       <li><a class="reference" href="#osgVarParam%2CosgItem%2CosgType"
-    title="osgVarParam(x: var osgItem; ftype: osgType)">osgVarParam,<wbr>osgItem,<wbr>osgType</a></li>
+    title="osgVarParam(x: var osgItem; ftype: osgType)">osgVarParam(x: var osgItem; ftype: osgType)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">osgLED
       <li><a class="reference" href="#osgLED%2CosgItem"
-    title="osgLED(x: var osgItem)">osgLED,<wbr>osgItem</a></li>
+    title="osgLED(x: var osgItem)">osgLED(x: var osgItem)</a></li>
 
   </ul>
 
@@ -554,7 +556,7 @@ Type descriptor
   </pre></dt>
 <dd>
 
-Item for delayed code generation [CC53]. Item objects are short-lived contextual objects and are generaly allocated on the stack: there's no need for <tt class="docutils literal"><span class="pre">ref</span></tt>. Items are returned by the OSP parser procedures. You can understand an <tt class="docutils literal"><span class="pre">osgItem</span></tt> as an instantiation of an <tt class="docutils literal"><span class="pre">osgObject</span></tt> in a context.
+Item for delayed code generation [CC53]. Item objects are short-lived contextual objects and are generaly allocated on the stack: there's no need for <tt class="docutils literal"><span class="pre"><span class="Keyword">ref</span></span></tt>. Items are returned by the OSP parser procedures. You can understand an <tt class="docutils literal"><span class="pre"><span class="Identifier">osgItem</span></span></tt> as an instantiation of an <tt class="docutils literal"><span class="pre"><span class="Identifier">osgObject</span></span></tt> in a context.
 
 </dd>
 <a id="osgObjDesc"></a>
@@ -590,7 +592,7 @@ Symbol descriptor in the table of symbols [CC39].
   </pre></dt>
 <dd>
 
-Data types of symbols [CC40]. Named types are represented in the symbol table by an entry of type <tt class="docutils literal"><span class="pre">osgObjDesc</span></tt> which in turns refers to an element of type <tt class="docutils literal"><span class="pre">osgTypeDesc</span></tt>.
+Data types of symbols [CC40]. Named types are represented in the symbol table by an entry of type <tt class="docutils literal"><span class="pre"><span class="Identifier">osgObjDesc</span></span></tt> which in turns refers to an element of type <tt class="docutils literal"><span class="pre"><span class="Identifier">osgTypeDesc</span></span></tt>.
 
 </dd>
 
@@ -677,7 +679,7 @@ The object is a variable / call by value procedure parameter [CC76].
 <dt><pre><a href="OSG.html#osgPar"><span class="Identifier">osgPar</span></a> <span class="Other">=</span> <span class="DecNumber">3</span></pre></dt>
 <dd>
 
-The object is a call by <tt class="docutils literal"><span class="pre">var</span></tt> (address) procedure parameter in a procedure call [CC76].
+The object is a call by <tt class="docutils literal"><span class="pre"><span class="Keyword">var</span></span></tt> (address) procedure parameter in a procedure call [CC76].
 
 </dd>
 <a id="osgFld"></a>
@@ -894,7 +896,7 @@ Write integer to standard output
 <dt><pre><a href="OSG.html#osgStdWriteChar"><span class="Identifier">osgStdWriteChar</span></a> <span class="Other">=</span> <span class="DecNumber">0x000FFFFB'u32</span></pre></dt>
 <dd>
 
-Write <tt class="docutils literal"><span class="pre">chr(x)</span></tt> to standard output
+Write <tt class="docutils literal"><span class="pre"><span class="Identifier">chr</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span></span></tt> to standard output
 
 </dd>
 <a id="osgStdWriteLine"></a>
@@ -908,7 +910,7 @@ End line
 <dt><pre><a href="OSG.html#osgStdLED"><span class="Identifier">osgStdLED</span></a> <span class="Other">=</span> <span class="DecNumber">0x000FFFF9'u32</span></pre></dt>
 <dd>
 
-Show <tt class="docutils literal"><span class="pre">x</span></tt> on LED (not implemented)
+Show <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span></span></tt> on LED (not implemented)
 
 </dd>
 <a id="osgStdSwitch"></a>
@@ -938,250 +940,250 @@ Generic read from standard input
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
 <a id="osgWriteReg,uint32,File"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteReg%2Cuint32%2CFile"><span class="Identifier">osgWriteReg</span></a><span class="Other">(</span><span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span> <span class="Other">=</span> <span class="Identifier">W</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteReg%2Cuint32%2CFile"><span class="Identifier">osgWriteReg</span></a><span class="Other">(</span><span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span> <span class="Other">=</span> <span class="Identifier">W</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Write an anonymous or well-know register name.
 
 </dd>
 <a id="osgWriteDebugAsm,int32,openArray[uint32],File"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteDebugAsm%2Cint32%2CopenArray%5Buint32%5D%2CFile"><span class="Identifier">osgWriteDebugAsm</span></a><span class="Other">(</span><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">uint32</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">osgCode</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span> <span class="Other">=</span> <span class="Identifier">W</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteDebugAsm%2Cint32%2CopenArray%5Buint32%5D%2CFile"><span class="Identifier">osgWriteDebugAsm</span></a><span class="Other">(</span><span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">uint32</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">osgCode</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span> <span class="Other">=</span> <span class="Identifier">W</span><span class="Other">)</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Write the RISC assembler corresponding to the memory location <tt class="docutils literal"><span class="pre">i</span></tt> in code. The procedure signature has been changed to be able to use it from the RISC emulator.
+Write the RISC assembler corresponding to the memory location <tt class="docutils literal"><span class="pre"><span class="Identifier">i</span></span></tt> in code. The procedure signature has been changed to be able to use it from the RISC emulator.
 
 </dd>
 <a id="osgDecode"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgDecode"><span class="Identifier">osgDecode</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgDecode"><span class="Identifier">osgDecode</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Dump RISC object memory content.
 
 </dd>
 <a id="osgDebugCode,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgDebugCode%2Cstring"><span class="Identifier">osgDebugCode</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Code is now&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgDebugCode%2Cstring"><span class="Identifier">osgDebugCode</span></a><span class="Other">(</span><span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Code is now&quot;</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Can be called when debugging compiler generation to dump the content of the last instructions in <tt class="docutils literal"><span class="pre">osgCode</span></tt> memory. The header message is printed before the memory dump.
+Can be called when debugging compiler generation to dump the content of the last instructions in <tt class="docutils literal"><span class="pre"><span class="Identifier">osgCode</span></span></tt> memory. The header message is printed before the memory dump.
 
 </dd>
 <a id="osgCheckRegs"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgCheckRegs"><span class="Identifier">osgCheckRegs</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgCheckRegs"><span class="Identifier">osgCheckRegs</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 After unstacking the registers stack, check that we don't underflow.
 
 </dd>
 <a id="osgFixLink,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgFixLink%2Cint32"><span class="Identifier">osgFixLink</span></a><span class="Other">(</span><span class="Identifier">L</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgFixLink%2Cint32"><span class="Identifier">osgFixLink</span></a><span class="Other">(</span><span class="Identifier">L</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Fix temporary branches locations replacing them with the final adresses. The <tt class="docutils literal"><span class="pre">L</span></tt> parameter is the first of a chain. The next value in the chain has been temporarily stored in the offset value <tt class="docutils literal"><span class="pre">off</span></tt> of the branch instruction. Note that branch instruction use addresses relative to the instruction location (PC-relative) therefore the value <tt class="docutils literal"><span class="pre">osgPc - L - 1</span></tt> is used to fix it. Note also that this procedure, like many others in Wirth's code, use global variables, in that case <tt class="docutils literal"><span class="pre">osgPc</span></tt>, and is very dependant of the location in the code where it is called.
+Fix temporary branches locations replacing them with the final adresses. The <tt class="docutils literal"><span class="pre"><span class="Identifier">L</span></span></tt> parameter is the first of a chain. The next value in the chain has been temporarily stored in the offset value <tt class="docutils literal"><span class="pre"><span class="Identifier">off</span></span></tt> of the branch instruction. Note that branch instruction use addresses relative to the instruction location (PC-relative) therefore the value <tt class="docutils literal"><span class="pre"><span class="Identifier">osgPc</span> <span class="Operator">-</span> <span class="Identifier">L</span> <span class="Operator">-</span> <span class="DecNumber">1</span></span></tt> is used to fix it. Note also that this procedure, like many others in Wirth's code, use global variables, in that case <tt class="docutils literal"><span class="pre"><span class="Identifier">osgPc</span></span></tt>, and is very dependant of the location in the code where it is called.
 
 </dd>
 <a id="osgMakeConstItem,osgItem,osgType,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgMakeConstItem%2CosgItem%2CosgType%2Cint32"><span class="Identifier">osgMakeConstItem</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">typ</span><span class="Other">:</span> <a href="OSG.html#osgType"><span class="Identifier">osgType</span></a><span class="Other">;</span> <span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgMakeConstItem%2CosgItem%2CosgType%2Cint32"><span class="Identifier">osgMakeConstItem</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">typ</span><span class="Other">:</span> <a href="OSG.html#osgType"><span class="Identifier">osgType</span></a><span class="Other">;</span> <span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Create a constant <tt class="docutils literal"><span class="pre">osgItem</span></tt> of type <tt class="docutils literal"><span class="pre">typ</span></tt> from the given value <tt class="docutils literal"><span class="pre">val</span></tt>.
+Create a constant <tt class="docutils literal"><span class="pre"><span class="Identifier">osgItem</span></span></tt> of type <tt class="docutils literal"><span class="pre"><span class="Identifier">typ</span></span></tt> from the given value <tt class="docutils literal"><span class="pre"><span class="Identifier">val</span></span></tt>.
 
 </dd>
 <a id="osgMakeItem,osgItem,osgObject,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgMakeItem%2CosgItem%2CosgObject%2Cint32"><span class="Identifier">osgMakeItem</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">;</span> <span class="Identifier">curlev</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgMakeItem%2CosgItem%2CosgObject%2Cint32"><span class="Identifier">osgMakeItem</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">;</span> <span class="Identifier">curlev</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Convert <tt class="docutils literal"><span class="pre">y</span></tt> <tt class="docutils literal"><span class="pre">osgObject</span></tt> into a corresponding <tt class="docutils literal"><span class="pre">osgItem</span></tt> returned as <tt class="docutils literal"><span class="pre">x</span></tt> [CC77]. Difference between the addressing of local and global variables should be taken into account. The handling of intermediate-level variables is not treated here.
+Convert <tt class="docutils literal"><span class="pre"><span class="Identifier">y</span></span></tt> <tt class="docutils literal"><span class="pre"><span class="Identifier">osgObject</span></span></tt> into a corresponding <tt class="docutils literal"><span class="pre"><span class="Identifier">osgItem</span></span></tt> returned as <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span></span></tt> [CC77]. Difference between the addressing of local and global variables should be taken into account. The handling of intermediate-level variables is not treated here.
 
 </dd>
 <a id="osgField,osgItem,osgObject"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgField%2CosgItem%2CosgObject"><span class="Identifier">osgField</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgField%2CosgItem%2CosgObject"><span class="Identifier">osgField</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Calculate the address of the field named <tt class="docutils literal"><span class="pre">y.name</span></tt> in the object <tt class="docutils literal"><span class="pre">x</span></tt> [CC57].
+Calculate the address of the field named <tt class="docutils literal"><span class="pre"><span class="Identifier">y</span><span class="Operator">.</span><span class="Identifier">name</span></span></tt> in the object <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span></span></tt> [CC57].
 
 </dd>
 <a id="osgIndex,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgIndex%2CosgItem%2CosgItem"><span class="Identifier">osgIndex</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgIndex%2CosgItem%2CosgItem"><span class="Identifier">osgIndex</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Calculate the address of an indexed element of an array and generate the code to access it [CC57].
 
 </dd>
 <a id="osgNot,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgNot%2CosgItem"><span class="Identifier">osgNot</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgNot%2CosgItem"><span class="Identifier">osgNot</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Negation of a boolean condition.
 
 </dd>
 <a id="osgAnd1,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgAnd1%2CosgItem"><span class="Identifier">osgAnd1</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgAnd1%2CosgItem"><span class="Identifier">osgAnd1</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-In a boolean <tt class="docutils literal"><span class="pre">a and b</span></tt> condition, a branch instruction must be emmitted before the second operand is processed, and this instruction address must be fixed up [CC67]. The address that is fixed up is in <tt class="docutils literal"><span class="pre">x.b</span></tt> (see <tt class="docutils literal"><span class="pre">osgOr1</span></tt>).
+In a boolean <tt class="docutils literal"><span class="pre"><span class="Identifier">a</span> <span class="Keyword">and</span> <span class="Identifier">b</span></span></tt> condition, a branch instruction must be emmitted before the second operand is processed, and this instruction address must be fixed up [CC67]. The address that is fixed up is in <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">b</span></span></tt> (see <tt class="docutils literal"><span class="pre"><span class="Identifier">osgOr1</span></span></tt>).
 
 </dd>
 <a id="osgAnd2,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgAnd2%2CosgItem%2CosgItem"><span class="Identifier">osgAnd2</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgAnd2%2CosgItem%2CosgItem"><span class="Identifier">osgAnd2</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-This is the second part of processing a boolean <tt class="docutils literal"><span class="pre">a and b</span></tt> instruction, evaluating <tt class="docutils literal"><span class="pre">b</span></tt> only if <tt class="docutils literal"><span class="pre">a</span></tt> is true [CC67].
+This is the second part of processing a boolean <tt class="docutils literal"><span class="pre"><span class="Identifier">a</span> <span class="Keyword">and</span> <span class="Identifier">b</span></span></tt> instruction, evaluating <tt class="docutils literal"><span class="pre"><span class="Identifier">b</span></span></tt> only if <tt class="docutils literal"><span class="pre"><span class="Identifier">a</span></span></tt> is true [CC67].
 
 </dd>
 <a id="osgOr1,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgOr1%2CosgItem"><span class="Identifier">osgOr1</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgOr1%2CosgItem"><span class="Identifier">osgOr1</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-When parsing <tt class="docutils literal"><span class="pre">a or b</span></tt> condition, the branch instruction must be executed when the respective conditions are satisfied [CC67]. The adress tha is fixed up is in <tt class="docutils literal"><span class="pre">x.a</span></tt> (see <tt class="docutils literal"><span class="pre">osgAnd1</span></tt>).
+When parsing <tt class="docutils literal"><span class="pre"><span class="Identifier">a</span> <span class="Keyword">or</span> <span class="Identifier">b</span></span></tt> condition, the branch instruction must be executed when the respective conditions are satisfied [CC67]. The adress tha is fixed up is in <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">a</span></span></tt> (see <tt class="docutils literal"><span class="pre"><span class="Identifier">osgAnd1</span></span></tt>).
 
 </dd>
 <a id="osgOr2,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgOr2%2CosgItem%2CosgItem"><span class="Identifier">osgOr2</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgOr2%2CosgItem%2CosgItem"><span class="Identifier">osgOr2</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-This is the second part of processin a boolean <tt class="docutils literal"><span class="pre">a or b</span></tt> instruction, lazily evaluating <tt class="docutils literal"><span class="pre">b</span></tt> only if <tt class="docutils literal"><span class="pre">a</span></tt> is false [CC67].
+This is the second part of processin a boolean <tt class="docutils literal"><span class="pre"><span class="Identifier">a</span> <span class="Keyword">or</span> <span class="Identifier">b</span></span></tt> instruction, lazily evaluating <tt class="docutils literal"><span class="pre"><span class="Identifier">b</span></span></tt> only if <tt class="docutils literal"><span class="pre"><span class="Identifier">a</span></span></tt> is false [CC67].
 
 </dd>
 <a id="osgNeg,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgNeg%2CosgItem"><span class="Identifier">osgNeg</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgNeg%2CosgItem"><span class="Identifier">osgNeg</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Constant folding for number negation [CC55]. If the argument is a constant, we execute the negation immediately.
 
 </dd>
 <a id="osgAddOp,int32,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgAddOp%2Cint32%2CosgItem%2CosgItem"><span class="Identifier">osgAddOp</span></a><span class="Other">(</span><span class="Identifier">op</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgAddOp%2Cint32%2CosgItem%2CosgItem"><span class="Identifier">osgAddOp</span></a><span class="Other">(</span><span class="Identifier">op</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Constant folding in addition / substraction [CC55]. If the compiler is able to do the operation at compilation time, when one or both arguments are constants, we do it instead of generating the code.
 
 </dd>
 <a id="osgMulOp,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgMulOp%2CosgItem%2CosgItem"><span class="Identifier">osgMulOp</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgMulOp%2CosgItem%2CosgItem"><span class="Identifier">osgMulOp</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Constant folding in multiplication [CC55]. If the compiler is able to do the operation at compilation time, when one or both arguments are constants, we do it instead of generating the code. If one of the arguments is 2, we do a left shift instead.
 
 </dd>
 <a id="osgDivOp,int32,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgDivOp%2Cint32%2CosgItem%2CosgItem"><span class="Identifier">osgDivOp</span></a><span class="Other">(</span><span class="Identifier">op</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgDivOp%2Cint32%2CosgItem%2CosgItem"><span class="Identifier">osgDivOp</span></a><span class="Other">(</span><span class="Identifier">op</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Constant folding in division and modulo [CC56]. If the compiler is able to do the operation at compilation time, when one or both arguments are constants, we do it instead of generating the code. If one of the arguments is 2, we do a right shift instead. Also, we can check that we don't divide by 0.
 
 </dd>
 <a id="osgRelation,int32,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgRelation%2Cint32%2CosgItem%2CosgItem"><span class="Identifier">osgRelation</span></a><span class="Other">(</span><span class="Identifier">op</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgRelation%2Cint32%2CosgItem%2CosgItem"><span class="Identifier">osgRelation</span></a><span class="Other">(</span><span class="Identifier">op</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Generate the code for a comparison expression [CC63].
 
 </dd>
 <a id="osgStore,osgItem,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgStore%2CosgItem%2CosgItem"><span class="Identifier">osgStore</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgStore%2CosgItem%2CosgItem"><span class="Identifier">osgStore</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Code generation for assignment of variable <tt class="docutils literal"><span class="pre">y</span></tt> into <tt class="docutils literal"><span class="pre">x</span></tt> [CC69]. There is no special processing depending on the variable type as it is done in <tt class="docutils literal"><span class="pre">osgLoad</span></tt> procedure.
+Code generation for assignment of variable <tt class="docutils literal"><span class="pre"><span class="Identifier">y</span></span></tt> into <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span></span></tt> [CC69]. There is no special processing depending on the variable type as it is done in <tt class="docutils literal"><span class="pre"><span class="Identifier">osgLoad</span></span></tt> procedure.
 
 </dd>
 <a id="osgVarParam,osgItem,osgType"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgVarParam%2CosgItem%2CosgType"><span class="Identifier">osgVarParam</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">ftype</span><span class="Other">:</span> <a href="OSG.html#osgType"><span class="Identifier">osgType</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgVarParam%2CosgItem%2CosgType"><span class="Identifier">osgVarParam</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">ftype</span><span class="Other">:</span> <a href="OSG.html#osgType"><span class="Identifier">osgType</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Code generation for a procedure call by-<tt class="docutils literal"><span class="pre">var</span></tt> parameter [CC78].
+Code generation for a procedure call by-<tt class="docutils literal"><span class="pre"><span class="Keyword">var</span></span></tt> parameter [CC78].
 
 </dd>
 <a id="osgValueParam,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgValueParam%2CosgItem"><span class="Identifier">osgValueParam</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgValueParam%2CosgItem"><span class="Identifier">osgValueParam</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Code generation for a procedure call by-value parameter [CC78].
 
 </dd>
 <a id="osgOpenArrayParam,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgOpenArrayParam%2CosgItem"><span class="Identifier">osgOpenArrayParam</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgOpenArrayParam%2CosgItem"><span class="Identifier">osgOpenArrayParam</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Code generation for an <tt class="docutils literal"><span class="pre">openarray</span></tt> parameter in a procedure call [CC85].
+Code generation for an <tt class="docutils literal"><span class="pre"><span class="Identifier">openarray</span></span></tt> parameter in a procedure call [CC85].
 
 </dd>
 <a id="osgCFJump,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgCFJump%2CosgItem"><span class="Identifier">osgCFJump</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgCFJump%2CosgItem"><span class="Identifier">osgCFJump</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Conditional forward jump [CC63]. It generates the necessary branch instruction according to its parameter <tt class="docutils literal"><span class="pre">x.r</span></tt> in such a way that the jump is taken if the specified condition is not satisfied. The destination location of branches is still unknown when the instruction is to be emitted. The problem is solved by a fixup: the location of the branch instruction is added as attribute <tt class="docutils literal"><span class="pre">x.a</span></tt> to the generated <tt class="docutils literal"><span class="pre">osgItem</span></tt>. This attribute is used later when the destination of the jump is known in order to complete the branch instruction with its true address.
+Conditional forward jump [CC63]. It generates the necessary branch instruction according to its parameter <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">r</span></span></tt> in such a way that the jump is taken if the specified condition is not satisfied. The destination location of branches is still unknown when the instruction is to be emitted. The problem is solved by a fixup: the location of the branch instruction is added as attribute <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">a</span></span></tt> to the generated <tt class="docutils literal"><span class="pre"><span class="Identifier">osgItem</span></span></tt>. This attribute is used later when the destination of the jump is known in order to complete the branch instruction with its true address.
 
 </dd>
 <a id="osgFJump,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgFJump%2Cint32"><span class="Identifier">osgFJump</span></a><span class="Other">(</span><span class="Identifier">L</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgFJump%2Cint32"><span class="Identifier">osgFJump</span></a><span class="Other">(</span><span class="Identifier">L</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Unconditional forward jump [CC64]. The address of the jump <tt class="docutils literal"><span class="pre">L</span></tt> is updated with <tt class="docutils literal"><span class="pre">osgPc - 1</span></tt> in order to create a chain of addresses that will be updated by the <tt class="docutils literal"><span class="pre">osgFixLink</span></tt> procedure when the final addresses are known. Note that as the RISC processor does not have an uncondition jump instruction, we use the conditional jump <tt class="docutils literal"><span class="pre">BC</span></tt> instruction with the always true <tt class="docutils literal"><span class="pre">AL</span></tt> condition.
+Unconditional forward jump [CC64]. The address of the jump <tt class="docutils literal"><span class="pre"><span class="Identifier">L</span></span></tt> is updated with <tt class="docutils literal"><span class="pre"><span class="Identifier">osgPc</span> <span class="Operator">-</span> <span class="DecNumber">1</span></span></tt> in order to create a chain of addresses that will be updated by the <tt class="docutils literal"><span class="pre"><span class="Identifier">osgFixLink</span></span></tt> procedure when the final addresses are known. Note that as the RISC processor does not have an uncondition jump instruction, we use the conditional jump <tt class="docutils literal"><span class="pre"><span class="Identifier">BC</span></span></tt> instruction with the always true <tt class="docutils literal"><span class="pre"><span class="Identifier">AL</span></span></tt> condition.
 
 </dd>
 <a id="osgCBJump,osgItem,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgCBJump%2CosgItem%2Cint32"><span class="Identifier">osgCBJump</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">L</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgCBJump%2CosgItem%2Cint32"><span class="Identifier">osgCBJump</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">;</span> <span class="Identifier">L</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Conditional backward jump [CC65].  It generates the necessary branch instruction according to its parameter <tt class="docutils literal"><span class="pre">x.r</span></tt> in such a way that the jump is taken if the specified condition is not satisfied.
+Conditional backward jump [CC65].  It generates the necessary branch instruction according to its parameter <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">r</span></span></tt> in such a way that the jump is taken if the specified condition is not satisfied.
 
 </dd>
 <a id="osgBJump,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgBJump%2Cint32"><span class="Identifier">osgBJump</span></a><span class="Other">(</span><span class="Identifier">L</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgBJump%2Cint32"><span class="Identifier">osgBJump</span></a><span class="Other">(</span><span class="Identifier">L</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Unconditional backward jump [CC65]. Note that as the RISC processor does not have an uncondition jump instruction, we use the conditional jump <tt class="docutils literal"><span class="pre">BC</span></tt> instruction with the always true <tt class="docutils literal"><span class="pre">AL</span></tt> condition.
+Unconditional backward jump [CC65]. Note that as the RISC processor does not have an uncondition jump instruction, we use the conditional jump <tt class="docutils literal"><span class="pre"><span class="Identifier">BC</span></span></tt> instruction with the always true <tt class="docutils literal"><span class="pre"><span class="Identifier">AL</span></span></tt> condition.
 
 </dd>
 <a id="osgCall,osgObject"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgCall%2CosgObject"><span class="Identifier">osgCall</span></a><span class="Other">(</span><span class="Identifier">obj</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgCall%2CosgObject"><span class="Identifier">osgCall</span></a><span class="Other">(</span><span class="Identifier">obj</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Emit the call to a procedure [CC78]. We use a branch and link <tt class="docutils literal"><span class="pre">BL</span></tt> to come back at procedure completion with the always true <tt class="docutils literal"><span class="pre">AL</span></tt> condition.
+Emit the call to a procedure [CC78]. We use a branch and link <tt class="docutils literal"><span class="pre"><span class="Identifier">BL</span></span></tt> to come back at procedure completion with the always true <tt class="docutils literal"><span class="pre"><span class="Identifier">AL</span></span></tt> condition.
 
 </dd>
 <a id="osgEnter,int32,int32,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgEnter%2Cint32%2Cint32%2Cbool"><span class="Identifier">osgEnter</span></a><span class="Other">(</span><span class="Identifier">parblksize</span><span class="Other">,</span> <span class="Identifier">locblksize</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">comd</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgEnter%2Cint32%2Cint32%2Cbool"><span class="Identifier">osgEnter</span></a><span class="Other">(</span><span class="Identifier">parblksize</span><span class="Other">,</span> <span class="Identifier">locblksize</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">comd</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Emit the instructions for a procedure prologue [CC71] and [CC77].
 
 </dd>
 <a id="osgReturn,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgReturn%2Cint32"><span class="Identifier">osgReturn</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgReturn%2Cint32"><span class="Identifier">osgReturn</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Emit the instructions for a procedure epilogue [CC71] and [CC77]. Unstack all local déclarations and restore return value.
 
 </dd>
 <a id="osgOrd,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgOrd%2CosgItem"><span class="Identifier">osgOrd</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgOrd%2CosgItem"><span class="Identifier">osgOrd</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Standard function to get the ordinal value of <tt class="docutils literal"><span class="pre">x</span></tt> [CC80]. The result is an integer. Makes sense only on <tt class="docutils literal"><span class="pre">bool</span></tt> in Nim0.
+Standard function to get the ordinal value of <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span></span></tt> [CC80]. The result is an integer. Makes sense only on <tt class="docutils literal"><span class="pre"><span class="Identifier">bool</span></span></tt> in Nim0.
 
 </dd>
 <a id="osgChr,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgChr%2CosgItem"><span class="Identifier">osgChr</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgChr%2CosgItem"><span class="Identifier">osgChr</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Standard function to convert <tt class="docutils literal"><span class="pre">int</span></tt> value <tt class="docutils literal"><span class="pre">x</span></tt> to <tt class="docutils literal"><span class="pre">char</span></tt>. The result is a character.
+Standard function to convert <tt class="docutils literal"><span class="pre"><span class="Identifier">int</span></span></tt> value <tt class="docutils literal"><span class="pre"><span class="Identifier">x</span></span></tt> to <tt class="docutils literal"><span class="pre"><span class="Identifier">char</span></span></tt>. The result is a character.
 
 </dd>
 <a id="osgOpenInput"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgOpenInput"><span class="Identifier">osgOpenInput</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgOpenInput"><span class="Identifier">osgOpenInput</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard procedure to start reading from command parameters [CC80].</p>
@@ -1191,16 +1193,16 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgReadInt,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgReadInt%2CosgItem"><span class="Identifier">osgReadInt</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgReadInt%2CosgItem"><span class="Identifier">osgReadInt</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>Standard procedure that reads an <tt class="docutils literal"><span class="pre">int</span></tt> from the parameters of the command called [CC80]. Returns its value as an integer in <tt class="docutils literal"><span class="pre">RH</span></tt> register.</p>
+<p>Standard procedure that reads an <tt class="docutils literal"><span class="pre"><span class="Identifier">int</span></span></tt> from the parameters of the command called [CC80]. Returns its value as an integer in <tt class="docutils literal"><span class="pre"><span class="Identifier">RH</span></span></tt> register.</p>
 <p>We simplify management of standard functions and procedures, as Nim0 is run in the RISC emulator.</p>
 
 
 </dd>
 <a id="osgEot,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgEot%2CosgItem"><span class="Identifier">osgEot</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgEot%2CosgItem"><span class="Identifier">osgEot</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard function to check that we are at end of input after reading the parameters of the command called [CC80]. Returns the fact that there is no more input parameter as</p>
@@ -1209,7 +1211,7 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgWriteBool,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteBool%2CosgItem"><span class="Identifier">osgWriteBool</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteBool%2CosgItem"><span class="Identifier">osgWriteBool</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard procedure to output a boolean value.</p>
@@ -1218,7 +1220,7 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgWriteChar,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteChar%2CosgItem"><span class="Identifier">osgWriteChar</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteChar%2CosgItem"><span class="Identifier">osgWriteChar</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard procedure to output a character [CC80].</p>
@@ -1227,7 +1229,7 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgWriteInt,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteInt%2CosgItem"><span class="Identifier">osgWriteInt</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteInt%2CosgItem"><span class="Identifier">osgWriteInt</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard procedure to output an integer value [CC80].</p>
@@ -1236,7 +1238,7 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgWriteLn"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteLn"><span class="Identifier">osgWriteLn</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgWriteLn"><span class="Identifier">osgWriteLn</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard procedure to output a line feed [CC80].</p>
@@ -1245,7 +1247,7 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgSwitch,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgSwitch%2CosgItem"><span class="Identifier">osgSwitch</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgSwitch%2CosgItem"><span class="Identifier">osgSwitch</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard function to read the value from a switch [CC80]. Returns its value as an integer in a register.</p>
@@ -1254,7 +1256,7 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgLED,osgItem"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgLED%2CosgItem"><span class="Identifier">osgLED</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgLED%2CosgItem"><span class="Identifier">osgLED</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="OSG.html#osgItem"><span class="Identifier">osgItem</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 <p>Standard procedure to activate a LED [CC80].</p>
@@ -1263,25 +1265,25 @@ Standard function to convert <tt class="docutils literal"><span class="pre">int<
 
 </dd>
 <a id="osgOpen"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgOpen"><span class="Identifier">osgOpen</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgOpen"><span class="Identifier">osgOpen</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Set the environment for the compilation of a new Nim0 file.
 
 </dd>
 <a id="osgHeader,int32"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgHeader%2Cint32"><span class="Identifier">osgHeader</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgHeader%2Cint32"><span class="Identifier">osgHeader</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Generate the code for a module prologue
 
 </dd>
 <a id="osgClose,string,int32,int32,osgObject"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#osgClose%2Cstring%2Cint32%2Cint32%2CosgObject"><span class="Identifier">osgClose</span></a><span class="Other">(</span><span class="Identifier">modid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">key</span><span class="Other">,</span> <span class="Identifier">datasize</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">topScope</span><span class="Other">:</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#osgClose%2Cstring%2Cint32%2Cint32%2CosgObject"><span class="Identifier">osgClose</span></a><span class="Other">(</span><span class="Identifier">modid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">key</span><span class="Other">,</span> <span class="Identifier">datasize</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">topScope</span><span class="Other">:</span> <a href="OSG.html#osgObject"><span class="Identifier">osgObject</span></a><span class="Other">)</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>Write compilation result <tt class="docutils literal"><span class="pre">osgCode</span></tt> to file. The file format tries to remain compatible with Wirth's Oberon project object file format, even if we don't use some features and we could have simplified it [PO81], but the binary format is different. For instance, <tt class="docutils literal"><span class="pre">string</span></tt>s are stored with their length while it's not probably the case in Oberon.</p>
+<p>Write compilation result <tt class="docutils literal"><span class="pre"><span class="Identifier">osgCode</span></span></tt> to file. The file format tries to remain compatible with Wirth's Oberon project object file format, even if we don't use some features and we could have simplified it [PO81], but the binary format is different. For instance, <tt class="docutils literal"><span class="pre"><span class="Identifier">string</span></span></tt>s are stored with their length while it's not probably the case in Oberon.</p>
 <p><pre class="listing">
 CodeFile = name key version size imports typedesc varsize strings code commands entries ptrrefs fixP fixD fixT body &quot;O&quot;.
 imports = {modname key} 0X.
@@ -1305,7 +1307,7 @@ ptrrefs = {word} 0.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-04-20 01:06:54 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-04-23 00:10:04 UTC</small>
       </div>
     </div>
   </div>
