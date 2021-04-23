@@ -4,7 +4,7 @@
 -- "https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf"
 -- when generating static pages.
 -- Relative URL "/doc/OSG.html" is replaced by
--- "https://pmetras.gitlab.io/nim0/doc/OSG.html"
+-- "https://pmetras.gitlab.io/nim0/OSG.html"
 -- The absolute base URLs are taken from the "webroot" and "gitroot" metadata elements that must
 -- be defined in the Markdown document.
 
@@ -24,8 +24,8 @@ end
 function fix_link(url)
   if string.sub(url, 1, 4) == "http" then
     return url
-  elseif string.sub(url, 1, 1) == "/" then
-    return webroot .. url
+  elseif string.sub(url, 1, 4) == "/doc" then
+    return webroot .. string.sub(url, 5, -1)
   else
     return gitroot .. url
   end

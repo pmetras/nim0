@@ -321,11 +321,11 @@ module = declarations [statementSequence].</code></pre>
       break</code></pre>
 <h2 id="the-source-files">The source files</h2>
 <ul>
-<li><a href="https://pmetras.gitlab.io/nim0//doc/OSS.html"><code>OSS.nim</code></a>: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.</li>
-<li><a href="https://pmetras.gitlab.io/nim0//doc/OSP.html"><code>OSP.nim</code></a>: The compiler parser, that defines the syntax of the Nim0 language.</li>
-<li><a href="https://pmetras.gitlab.io/nim0//doc/OSG.html"><code>OSG.nim</code></a>: The code generator for the RISC target machine.</li>
-<li><a href="https://pmetras.gitlab.io/nim0//doc/RISC.html"><code>RISC.nim</code></a>: The RISC processor emulator, used to execute compiled programs.</li>
-<li><a href="https://pmetras.gitlab.io/nim0//doc/nim0.html"><code>nim0.nim</code></a>: The Nim0 compiler driver.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//OSS.html"><code>OSS.nim</code></a>: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//OSP.html"><code>OSP.nim</code></a>: The compiler parser, that defines the syntax of the Nim0 language.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//OSG.html"><code>OSG.nim</code></a>: The code generator for the RISC target machine.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//RISC.html"><code>RISC.nim</code></a>: The RISC processor emulator, used to execute compiled programs.</li>
+<li><a href="https://pmetras.gitlab.io/nim0//nim0.html"><code>nim0.nim</code></a>: The Nim0 compiler driver.</li>
 </ul>
 <p>All source files are cross-indexed with Wirth’s <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> book. Reference like <code>[CC13]</code> refers to page 13 of this document. Procedure and variable names are based on Wirth’s original names, but a module prefix has been appended for public names and procedures. For instance, <code>ossId</code> is defined in module <code>OSS.nim</code> in Nim0 while the original name is <code>id</code>.</p>
 <h2 id="differences-with-wirths-compiler">Differences with Wirth’s compiler</h2>
