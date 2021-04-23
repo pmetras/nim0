@@ -1,5 +1,5 @@
 ---
-title: Nim0, a compiler for a subset of Nim language to a RISC CPU with an emulator
+title: Nim0, A subset of Nim language, with a compiler to a 32-bits RISC CPU with a runtime emulator
 author: Pierre Métras <pierre@alterna.tv>
 date: 2021-04-21
 keywords: compiler, construction, Niklaus Wirth, nim, toy, language, RISC, emulator, Oberon-0
@@ -8,11 +8,11 @@ gitroot: https://gitlab.com/pmetras/nim0/-/blob/master/
 webroot: https://pmetras.gitlab.io/nim0/
 ---
 
-# Nim0: a minimal Nim compiler
-
 So you want to hack the [Nim compiler](https://github.com/nim-lang/Nim/) but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.
 
 Nim0 is a toy compiler for a limited subset of [Nim language](https://nim-lang.org/), all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of [Niklaus Wirth's Oberon-0 compiler](https://www.projectoberon.org/). You can read Wirth's book [Compiler Construction](misc/CompilerConstruction.pdf) provided in the `misc` directory and follow in the code.
+
+![Nim0 logo is blatantly inspired by Nim one (Nim1?)](doc/Nim0.png)
 
 The compiler can translate Nim0 source code to RISC 32 bits machine instructions (yes, that's a 32 platform and it makes the Nim code a bit more complex). A RISC emulator lets you run the resulting code, and you can even display and follow the content of the registers and RISC assembler instructions.
 
