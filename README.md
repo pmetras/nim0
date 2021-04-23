@@ -12,7 +12,7 @@ So you want to hack the [Nim compiler](https://github.com/nim-lang/Nim/) but you
 
 Nim0 is a toy compiler for a limited subset of [Nim language](https://nim-lang.org/), all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of [Niklaus Wirth's Oberon-0 compiler](https://www.projectoberon.org/). You can read Wirth's book [Compiler Construction](misc/CompilerConstruction.pdf) provided in the `misc` directory and follow in the code.
 
-![Nim0 logo is blatantly inspired by Nim one (Nim1?)](doc/Nim0.png)
+![Nim0 logo is blatantly inspired by Nim one (Nim1?)](/doc/Nim0.png)
 
 The compiler can translate Nim0 source code to RISC 32 bits machine instructions (yes, that's a 32 platform and it makes the Nim code a bit more complex). A RISC emulator lets you run the resulting code, and you can even display and follow the content of the registers and RISC assembler instructions.
 
