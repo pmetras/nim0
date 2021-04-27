@@ -46,7 +46,9 @@ task buildDoc, "Build Nim0 documentation":
 task buildSite, "Build Nim0 Gitlab page site files":
   # Process the README.md document and apply Lua filter to translate relative URLs
   # to absolute ones.
-  exec "pandoc --standalone --lua-filter misc/abs_url.lua --from markdown --to html --output doc/index.html README.md"
+  exec "cp misc/html/mvp.css doc/mvp.css"
+  exec "cp misc/html/Nim0.png doc/Nim0.png"
+  exec "pandoc --standalone --lua-filter misc/html/abs_url.lua --from markdown --to html5 --output doc/index.html --css mvp.css --template misc/html/template.html --toc --toc-depth=2 README.md"
 
 
 task buildAll, "Build all Nim0 project":

@@ -1,18 +1,17 @@
 ---
-title: Nim0, A subset of Nim language, with a compiler to a 32-bits RISC CPU with a runtime emulator
-author: Pierre Métras <pierre@alterna.tv>
+title: Nim0, a subset of Nim language, with a compiler to a 32-bits RISC CPU and a runtime emulator
+author: Pierre Métras
 date: 2021-04-21
 keywords: compiler, construction, Niklaus Wirth, nim, toy, language, RISC, emulator, Oberon-0
 lang: en
 gitroot: https://gitlab.com/pmetras/nim0/-/blob/master/
 webroot: https://pmetras.gitlab.io/nim0/
+logo: Nim0.png
 ---
 
 So you want to hack the [Nim compiler](https://github.com/nim-lang/Nim/) but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.
 
 Nim0 is a toy compiler for a limited subset of [Nim language](https://nim-lang.org/), all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of [Niklaus Wirth's Oberon-0 compiler](https://www.projectoberon.org/). You can read Wirth's book [Compiler Construction](misc/CompilerConstruction.pdf) provided in the `misc` directory and follow in the code.
-
-![Nim0 logo is blatantly inspired by Nim one (Nim1?)](/doc/Nim0.png)
 
 The compiler can translate Nim0 source code to RISC 32 bits machine instructions (yes, that's a 32 platform and it makes the Nim code a bit more complex). A RISC emulator lets you run the resulting code, and you can even display and follow the content of the registers and RISC assembler instructions.
 
@@ -298,6 +297,8 @@ template until*(cond, body: untyped): untyped =
 
 ## The source files
 
+The sources are available on the project repository: [https://gitlab.com/pmetras/nim0](https://gitlab.com/pmetras/nim0).
+
 - [`OSS.nim`](/doc/OSS.html): The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.
 - [`OSP.nim`](/doc/OSP.html): The compiler parser, that defines the syntax of the Nim0 language.
 - [`OSG.nim`](/doc/OSG.html): The code generator for the RISC target machine.
@@ -311,7 +312,7 @@ All source files are cross-indexed with Wirth's [Compiler Construction](misc/Com
 - Of course, we use Nim instead of Oberon code.
 - Better error messages.
 - Option to dump generated RISC assembler after compilation, with reference to source code.
-- I've tried to keep with Wirth's style of code as much as possible even if a better Nim style would have been possible, particularly in the RISC.nim module. But there are many places where Wirth uses hacks (like reusing the same object field for multiple different usages) or that are not clearly documented (like the standard functions and procedures or module management or are hardware dependant). These places in code could be improved.
+- I've tried to keep with Wirth's style of code as much as possible even if a better Nim style would have been possible. But there are many places where Wirth uses hacks (like reusing the same object field for multiple different usages) or that are not clearly documented (like the standard functions and procedures or module management or are hardware dependant). These places in code could be improved.
 - A RISC emulator to execute the generated code. The verbose mode shows the resulting assembler and the memory layout, and then executes code line by line with dump of registers and memory.
 
 ## Major differences between Nim0 and Nim

@@ -4,16 +4,10 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Pierre Métras pierre@alterna.tv" />
+  <meta name="author" content="Pierre Métras" />
   <meta name="dcterms.date" content="2021-04-21" />
   <meta name="keywords" content="compiler, construction, Niklaus Wirth, nim, toy, language, RISC, emulator, Oberon-0" />
-  <title>Nim0, A subset of Nim language, with a compiler to a 32-bits RISC CPU with a runtime emulator</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
+  <title>Nim0, a subset of Nim language, with a compiler to a 32-bits RISC CPU and a runtime emulator</title>
   <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
@@ -77,18 +71,46 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
+  <link rel="stylesheet" href="mvp.css" />
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Nim0, A subset of Nim language, with a compiler to a 32-bits RISC CPU with a runtime emulator</h1>
-<p class="author">Pierre Métras <a href="https://gitlab.com/pmetras/nim0/-/blob/master/mailto:pierre@alterna.tv" class="email">pierre@alterna.tv</a></p>
+  <nav id="TOC">
+    <a href="/"><img alt="Logo" src="Nim0.png" height="100"></a>
+    <section>
+      <aside>Get the source from the project repository <a href="https://gitlab.com/pmetras/nim0/">https://gitlab.com/pmetras/nim0</a> or with <mark><samp>nimble develop nim0</samp></mark></mark></aside>
+    </section>
+        <ul>
+      <li><a href="#">Navigation</a>
+        <ul>
+        <li><a href="#nim0-features">Nim0 features</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#pre-requisites">Pre-requisites</a></li>
+        <li><a href="#example">Example</a></li>
+        <li><a href="#nim0-ebnf-syntax">Nim0 EBNF syntax</a></li>
+        <li><a href="#the-source-files">The source files</a></li>
+        <li><a href="#differences-with-wirths-compiler">Differences with Wirth’s compiler</a></li>
+        <li><a href="#major-differences-between-nim0-and-nim">Major differences between Nim0 and Nim</a></li>
+        <li><a href="#bugs-and-todo">Bugs and TODO</a></li>
+        <li><a href="#how-to-extend-it">How to extend it?</a></li>
+        <li><a href="#license">License</a></li>
+        </ul>
+      </li>
+    </ul>
+      </nav>
+<h1 class="title">Nim0, a subset of Nim language, with a compiler to a 32-bits RISC CPU and a runtime emulator</h1>
+<p class="author">Pierre Métras</p>
 <p class="date">2021-04-21</p>
 </header>
+<main>
 <p>So you want to hack the <a href="https://github.com/nim-lang/Nim/">Nim compiler</a> but you are afraid by the complexity of the project? Look at Nim0 first to understand compiler basis. Try to add a new feature on your own, and then jump on the real project.</p>
 <p>Nim0 is a toy compiler for a limited subset of <a href="https://nim-lang.org/">Nim language</a>, all in 5 heavily documented source files (less than 4k LOC) so that you can understand them. It is a port of <a href="https://www.projectoberon.org/">Niklaus Wirth’s Oberon-0 compiler</a>. You can read Wirth’s book <a href="https://gitlab.com/pmetras/nim0/-/blob/master/misc/CompilerConstruction.pdf">Compiler Construction</a> provided in the <code>misc</code> directory and follow in the code.</p>
-<figure>
-<img src="https://pmetras.gitlab.io/nim0//Nim0.png" alt="Nim0 logo is blatantly inspired by Nim one (Nim1?)" /><figcaption>Nim0 logo is blatantly inspired by Nim one (Nim1?)</figcaption>
-</figure>
 <p>The compiler can translate Nim0 source code to RISC 32 bits machine instructions (yes, that’s a 32 platform and it makes the Nim code a bit more complex). A RISC emulator lets you run the resulting code, and you can even display and follow the content of the registers and RISC assembler instructions.</p>
 <p>Nim0 language is a tiny subset of Nim, but the goal is that Nim0 code is valid Nim code. Just change the <code>.nim0</code> extension to <code>.nim</code> to run it with a serious compiler (You’ll probably need to write a few templates to adapt Nim0 I/O procedures to Nim)!</p>
 <h2 id="nim0-features">Nim0 features</h2>
@@ -322,6 +344,7 @@ module = declarations [statementSequence].</code></pre>
     if cond:
       break</code></pre>
 <h2 id="the-source-files">The source files</h2>
+<p>The sources are available on the project repository: <a href="https://gitlab.com/pmetras/nim0">https://gitlab.com/pmetras/nim0</a>.</p>
 <ul>
 <li><a href="https://pmetras.gitlab.io/nim0//OSS.html"><code>OSS.nim</code></a>: The compiler scanner whose role is to parse lexems: identifiers, keywords and numbers.</li>
 <li><a href="https://pmetras.gitlab.io/nim0//OSP.html"><code>OSP.nim</code></a>: The compiler parser, that defines the syntax of the Nim0 language.</li>
@@ -335,7 +358,7 @@ module = declarations [statementSequence].</code></pre>
 <li>Of course, we use Nim instead of Oberon code.</li>
 <li>Better error messages.</li>
 <li>Option to dump generated RISC assembler after compilation, with reference to source code.</li>
-<li>I’ve tried to keep with Wirth’s style of code as much as possible even if a better Nim style would have been possible, particularly in the RISC.nim module. But there are many places where Wirth uses hacks (like reusing the same object field for multiple different usages) or that are not clearly documented (like the standard functions and procedures or module management or are hardware dependant). These places in code could be improved.</li>
+<li>I’ve tried to keep with Wirth’s style of code as much as possible even if a better Nim style would have been possible. But there are many places where Wirth uses hacks (like reusing the same object field for multiple different usages) or that are not clearly documented (like the standard functions and procedures or module management or are hardware dependant). These places in code could be improved.</li>
 <li>A RISC emulator to execute the generated code. The verbose mode shows the resulting assembler and the memory layout, and then executes code line by line with dump of registers and memory.</li>
 </ul>
 <h2 id="major-differences-between-nim0-and-nim">Major differences between Nim0 and Nim</h2>
@@ -360,5 +383,6 @@ module = declarations [statementSequence].</code></pre>
 <p>I haven’t completed the for loop to support automatic variable declaration as I was short for time. You can find a draft in function <code>ospForStatement2</code>.</p>
 <h2 id="license">License</h2>
 <p>Nim0 is created under the <a href="https://gitlab.com/pmetras/nim0/-/blob/master/LICENSE.md">MIT license</a>.</p>
+</main>
 </body>
 </html>
